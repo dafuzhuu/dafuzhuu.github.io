@@ -3,12 +3,29 @@
     <style>
       body {
         font-family: 'Times New Roman', serif;
-        margin-left: 100px;
-        margin-top: 50px;
+        margin-left: 200px;
+        margin-top: 80px;
       }
       p {
         text-indent: 20px;
       }
+      .topic {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 10px 0;
+          background-color: white
+          color: black;                
+          text-align: center;
+          text-decoration: none;   
+          border-radius: 5px;
+          transition: transform 0.5s ease;
+      }
+
+      .topic:hover {
+          transform: scale(1.1); /* 放大到原来的1.1倍 */
+          background-color: lightgray; /* 悬停时的背景颜色 */
+      }
+
     </style>
     <title>思明南路422号</title>
   </head>
@@ -18,7 +35,7 @@
         <h3>关于</h3>
         <p>厦大经院国金21级本科生</p>
       </section>
-      <a href="repo.html">
+      <a href="repo.html" class="topic">
         <h3>存货</h3>
       </a>
     </main>
