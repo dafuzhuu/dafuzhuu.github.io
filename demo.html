@@ -57,6 +57,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 
+    <!-- 引入Mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
   </head>
   
   <body>
@@ -158,9 +160,68 @@
         <!-- 表格 -->
         <section>
           <h3>表格</h3>
-          
+          <pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;月份&lt;/th&gt;
+      &lt;th&gt;收入&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;一月&lt;/td&gt;
+      &lt;td&gt;$1000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;二月&lt;/td&gt;
+      &lt;td&gt;$800&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;总计&lt;/td&gt;
+      &lt;td&gt;$1800&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>收入</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>一月</td>
+                <td>$1000</td>
+              </tr>
+              <tr>
+                <td>二月</td>
+                <td>$800</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>总计</td>
+                <td>$1800</td>
+              </tr>
+            </tfoot>
+          </table>
         </section>
-        
+
+        <!-- 公式 -->
+        <section>
+          <p>在头部引入Mathjax，之后便可用\(LaTeX\)编辑数学公式</p>
+          <pre><code class="language-html">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"&gt;&lt;/script&gt;</code></pre>
+          <p>
+            示例：\(f\in C[a,b]\)
+            \[
+              \lim_{x\rightarrow p}f'(\xi(x))=f'(\lim_{x\rightarrow p}\xi(x))=f'(p)\neq 0
+            \]
+          </p>
+        </section>
       </section>
     </main>
   </body>
