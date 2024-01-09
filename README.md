@@ -3,3 +3,6 @@
 
 ---
 
+`index.html`: 主页
+
+`repo.html`: 存货
