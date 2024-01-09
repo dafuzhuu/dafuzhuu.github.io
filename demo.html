@@ -37,14 +37,16 @@
         background-color: lightgray;
       }
       pre {
-        width: 650px; /* 设置固定宽度 */
+        color: #000; /* 文字颜色 */
+        background: #fff; /* 背景颜色 */
+        border: 1px solid #000; /* 边框颜色 */
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* 立体阴影效果 */
+        font-family: monospace; /* 等宽字体 */
+        padding: 1em;
+        border-radius: 4px; /* 轻微的圆角 */
+        margin: 1em 0; /* 保证周围有空间 */
         overflow: auto; /* 内容超出时显示滚动条 */
-        white-space: pre-wrap; /* 如果需要的话，可以让长行换行 */
-        word-wrap: break-word; /* 防止内容溢出 */
-        /* 其他样式设置，如边框、背景色等 */
-        border: 1px solid #ddd;
-        background-color: #f4f4f4;
-        padding: 10px;
+        white-space: pre; /* 保留空格和换行 */
       }
       .latex-container {
         margin-left: -350px;
