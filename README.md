@@ -3,6 +3,8 @@
 
 ---
 
+传送门：[思明南路422号](zzzzdf.page)
+
 `index.html`: 主页
 
 `repo.html`: 存货
