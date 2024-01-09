@@ -45,9 +45,11 @@
       <h1>手搓一个最简易博客</h1>
     </header>
     <main>
+      /*  整体布局  */
       <section>
         <h2>整体布局</h2>
-        <p>风格设计是借鉴<a href="pathos.page">这篇博客</a>，主要特点是大面积空白以及鼠标悬停时的按钮放大，需要自定义style如下。</p>
+        <p>风格是借鉴<a href="pathos.page">这篇博客</a>，主要特点是大面积空白以及鼠标悬停时的按钮放大，需要自定义style如下。</p>
+        <h3>字体设计</h3>
         <pre><code>
           <style>
             body {
@@ -57,6 +59,12 @@
               margin-top: 40px;
               line-height: 1.6; /* 行间距 */
             }
+          </style>
+        </code></pre>
+
+        <h3>超链接设计</h3>
+        <pre><code>
+          <style>
             a {
               color: inherit;
               text-decoration: none;
@@ -65,6 +73,12 @@
             a:hover {
               color: red;
             }
+          </style>
+        </code></pre>
+
+        <h3>返回主页键</h3>
+        <pre><code>
+          <style>
             .home-button {
               position: absolute;
               top: 15px;
@@ -88,9 +102,13 @@
           </style>
         </code></pre>
       </section>
+
+      /*  基础零件  */
       <section>
         <h2>基础零件</h2>
         <p>虽然博客的框架和主题越来越丰富，但最常用的零件无外乎：列表、图片、表格、公式、代码块。</p>
+        
+        /*  列表  */
         <section>
           <h3>列表</h3>
           <h4>有序列表</h4>
@@ -108,6 +126,12 @@
             </ul>
           </code></pre>
         </section>
+
+        /*  图片  */
+        <section>
+          
+        </section>
+        
       </section>
     </main>
   </body>
