@@ -37,10 +37,13 @@
         background-color: lightgray;
       }
       pre {
-        display: inline-block; /* 让 pre 元素表现得像行内块元素 */
-        /* 其他样式，例如背景、边框等 */
-        background-color: #f4f4f4;
+        width: 300px; /* 设置固定宽度 */
+        overflow: auto; /* 内容超出时显示滚动条 */
+        white-space: pre-wrap; /* 如果需要的话，可以让长行换行 */
+        word-wrap: break-word; /* 防止内容溢出 */
+        /* 其他样式设置，如边框、背景色等 */
         border: 1px solid #ddd;
+        background-color: #f4f4f4;
         padding: 10px;
       }
     </style>
