@@ -51,6 +51,10 @@
         display: flex;
         justify-content: center;
       }
+      .center {
+        text-align: center;
+      }
+
     </style>
     <title>手搓一个最简易博客</title>
 
@@ -159,7 +163,13 @@
           <pre><code class="language-html">
 &lt;img src="favicon.png" alt="Pokeball" width="200" height="200"&gt;
           </code></pre>
-          <img src="favicon.png" alt="Pokeball" width="200" height="200">
+          <div class="center">
+            <img src="favicon.png" alt="Pokeball" width="200" height="200">
+          </div>
+          <p>居中显示用了class="center"</p>
+          pre><code class="language-html">.center {
+  text-align: center;
+}</code></pre>
         </section>
 
         <!-- 表格 -->
@@ -226,6 +236,12 @@
           <div class="latex-container">
             \[\lim_{x\rightarrow p}f'(\xi(x))=f'(\lim_{x\rightarrow p}\xi(x))=f'(p)\neq 0\]
           </div>
+          <p>因为我有用margin-left:350px;，这是全局设置，因此对长公式要自定义类纠正</p>
+          <pre><code class="language-html">.latex-container {
+  margin-left: -350px;
+  display: flex;
+  justify-content: center;
+}</code></pre>
         </section>
 
         <!-- 代码块 -->
