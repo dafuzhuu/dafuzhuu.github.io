@@ -1,0 +1,114 @@
+<html>
+  <style>
+    body {
+      font-size: 16px;
+      font-family: 'Times New Roman', serif;
+      margin-left: 400px;
+      margin-top: 40px;
+      line-height: 1.6; /* 行间距 */
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: red;
+    }
+    .home-button {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 10px 0;
+      background-color: white;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .home-button:hover {
+      color: inherit;
+      transform: scale(1.15);
+      background-color: lightgray;
+    }
+  </style>
+  <title>手搓一个最简易博客</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+  <body>
+    <a href="index.html" class="home-button">返回主页</a>
+    <header>
+      <h1>手搓一个最简易博客</h1>
+    </header>
+    <main>
+      <section>
+        <h2>整体布局</h2>
+        <p>风格设计是借鉴<a href="pathos.page">这篇博客</a>，主要特点是大面积空白以及鼠标悬停时的按钮放大，需要自定义style如下。</p>
+        <pre><code>
+          <style>
+            body {
+              font-size: 16px;
+              font-family: 'Times New Roman', serif;
+              margin-left: 400px;
+              margin-top: 40px;
+              line-height: 1.6; /* 行间距 */
+            }
+            a {
+              color: inherit;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            }
+            a:hover {
+              color: red;
+            }
+            .home-button {
+              position: absolute;
+              top: 15px;
+              right: 25px;
+              display: inline-block;
+              padding: 5px 10px;
+              margin: 10px 0;
+              background-color: white;
+              color: black;
+              text-align: center;
+              text-decoration: none;
+              font-weight: bold;
+              border-radius: 5px;
+              transition: transform 0.3s, background-color 0.3s;
+            }
+            .home-button:hover {
+              color: inherit;
+              transform: scale(1.15);
+              background-color: lightgray;
+            }
+          </style>
+        </code></pre>
+      </section>
+      <section>
+        <h2>基础零件</h2>
+        <p>虽然博客的框架和主题越来越丰富，但最常用的零件无外乎：列表、图片、表格、公式、代码块。</p>
+        <section>
+          <h3>列表</h3>
+          <h4>有序列表</h4>
+          <pre><code>
+            <ol>
+              <li><a href="link1.com">item1</a></li>
+              <li><a href="link2.com">item2</a></li>
+            </ol>
+          </code></pre>
+          <h4>无序列表</h4>
+          <pre><code>
+            <ul>
+              <li><a href="link1.com">item1</a></li>
+              <li><a href="link2.com">item2</a></li>
+            </ul>
+          </code></pre>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
