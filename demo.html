@@ -46,6 +46,11 @@
         background-color: #f4f4f4;
         padding: 10px;
       }
+      .latex-container {
+        margin-left: 350px;
+        display: flex;
+        justify-content: center;
+      }
     </style>
     <title>手搓一个最简易博客</title>
 
@@ -218,9 +223,9 @@
           <p>
             示例：\(f\in C[a,b]\)
           </p>
-          <p>
+          <div class="latex-container">
             \[\lim_{x\rightarrow p}f'(\xi(x))=f'(\lim_{x\rightarrow p}\xi(x))=f'(p)\neq 0\]
-          </p>
+          </div>
         </section>
 
         <!-- 代码块 -->
