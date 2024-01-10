@@ -36,6 +36,12 @@
         transform: scale(1.1);
         background-color: lightgray;
       }
+      footer {
+        margin-left: -350px;
+        color: gray;
+        text-align: center;
+        padding: 20px 0;
+      }
       pre {
         width: 650px;
         color: #000; /* 文字颜色 */
@@ -145,6 +151,20 @@
         <p>准备好图片，上传到网站仓库，命名为"favicon.png"，在头部（也就是&amp;lt;head&amp;gt;）加入下面这段代码</p>
         <pre><code class="language-html">&lt;link rel="icon" href="favicon.png" type="image/png"&gt;
 &lt;link rel="apple-touch-icon" sizes="180x180" href="favicon.png"&gt;</code></pre>
+
+        <h3>脚注</h3>
+        <pre><code class="language-html">&lt;style&gt;
+  footer {
+    margin-left: -350px;
+    color: gray;
+    text-align: center;
+    padding: 20px 0;
+  }
+&lt;/style&gt;</code></pre>
+        <p>在&lt;main&gt;之后插入下面的代码</p>
+        <pre><code class="language-html">&lt;footer&gt;
+  &lt;p&gt;2024 &copy; &lt;a href="https://github.com/ultimate233/ultimate233.github.io"&gt;zzzzdf page&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
       </section>
 
       <!--  基础零件  -->
