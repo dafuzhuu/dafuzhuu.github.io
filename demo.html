@@ -132,6 +132,7 @@
 &lt;/style&gt;</code></pre>
 
         <h3>自定义网页图标</h3>
+        <p>准备好图片，上传到网站仓库，命名为"favicon.png"，在头部（也就是&amp;lt;head&amp;gt;）加入下面这段代码</p>
         <pre><code class="language-html">&lt;link rel="icon" href="favicon.png" type="image/png"&gt;
 &lt;link rel="apple-touch-icon" sizes="180x180" href="favicon.png"&gt;</code></pre>
       </section>
@@ -168,9 +169,7 @@
         <!--  图片  -->
         <section>
           <h3>图片</h3>
-          <pre><code class="language-html">
-&lt;img src="favicon.png" alt="Pokeball" width="150" height="150"&gt;
-          </code></pre>
+          <pre><code class="language-html">&lt;img src="favicon.png" alt="Pokeball" width="150" height="150"&gt;</code></pre>
           <div class="center">
             <img src="favicon.png" alt="Pokeball" width="150" height="150">
           </div>
@@ -260,21 +259,21 @@
           <p>左右尖括号&lt;, &gt;在html里是特殊字符，如果要正常显示需分别用&amp;lt;和&amp;gt;代替</p>
           <p>我自定义的代码块设计如下</p>
           <pre><code class="language-html">&lt;style&gt;
-pre {
-  width: 650px;
-  color: #000; /* 文字颜色 */
-  background: #fff; /* 背景颜色 */
-  border: 1px solid #000; /* 边框颜色 */
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* 立体阴影效果 */
-  font-family: monospace; /* 等宽字体 */
-  padding: 1em;
-  border-radius: 4px; /* 轻微的圆角 */
-  margin: 1em 0; /* 保证周围有空间 */
-  overflow: auto; /* 内容超出时显示滚动条 */
-  white-space: pre; /* 保留空格和换行 */
-}
+  pre {
+    width: 650px;
+    color: #000; /* 文字颜色 */
+    background: #fff; /* 背景颜色 */
+    border: 1px solid #000; /* 边框颜色 */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* 立体阴影效果 */
+    font-family: monospace; /* 等宽字体 */
+    padding: 1em;
+    border-radius: 4px; /* 轻微的圆角 */
+    margin: 1em 0; /* 保证周围有空间 */
+    overflow: auto; /* 内容超出时显示滚动条 */
+    white-space: pre; /* 保留空格和换行 */
+  }
 &lt;/style&gt;</code></pre>
-          <p>如果还想让代码高亮，增强可读性，需要导入相应的库</p>
+          <p>如果还想让代码高亮，增强可读性，需要在头部导入相应的库</p>
           <pre><code class="language-html">&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" /&gt;
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"&gt;&lt;/script&gt;
 </code></pre>
