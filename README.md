@@ -7,4 +7,6 @@ portal：[思明南路422号](https://zzzzdf.page)
 
 `index.html`: 主页
 
-`repo.html`: 存货
+`repo.html`: 一些存货
+
+`demo.html`: 手搓一个最简易博客
