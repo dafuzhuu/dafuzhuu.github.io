@@ -3,7 +3,7 @@
 
 ---
 
-传送门：[思明南路422号](https://zzzzdf.page)
+portal：[思明南路422号](https://zzzzdf.page)
 
 `index.html`: 主页
 
