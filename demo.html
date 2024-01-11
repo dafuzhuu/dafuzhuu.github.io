@@ -58,10 +58,6 @@
         display: flex;
         justify-content: center;
       }
-      .center {
-        text-align: center;
-      }
-
     </style>
     <title>手搓一个最简易博客</title>
 
@@ -196,17 +192,12 @@
         <!--  图片  -->
         <section>
           <h3>图片</h3>
-          <pre><code class="language-html">&lt;div class="center"&gt;
+          <pre><code class="language-html">&lt;div class="text-align:center"&gt;
   &lt;img src="favicon.png" alt="Pokeball" width="150" height="150"&gt;
 &lt;/div&gt;</code></pre>
-          <div class="center">
+          <div class="text-align:center">
             <img src="favicon.png" alt="Pokeball" width="150" height="150">
           </div>
-          <p>居中显示用了class="center"，为了抵消整体margin-left的影响，需要反向挪350px</p>
-          <pre><code class="language-html">.center {
-  margin-left: -350px;
-  text-align: center;
-}</code></pre>
         </section>
 
         <!-- 表格 -->
