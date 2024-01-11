@@ -281,11 +281,16 @@
             \[\lim_{x\rightarrow p}f'(\xi(x))=f'(\lim_{x\rightarrow p}\xi(x))=f'(p)\neq 0\]
           </div>
           <p>因为我有用margin-left:350px;，这是全局设置，因此对长公式要自定义类纠正</p>
-          <pre><code class="language-html">.latex-container {
-  margin-left: -350px;
-  display: flex;
-  justify-content: center;
-}</code></pre>
+          <pre><code class="language-html">&lt;style&gt;
+  .latex-container {
+    margin-left: -350px;
+    display: flex;
+    justify-content: center;
+  }
+&lt;/style&gt;</code></pre>
+          <pre><code class="language-html">&lt;div class="latex-container"&gt;
+  \[\lim_{x\rightarrow p}f'(\xi(x))=f'(\lim_{x\rightarrow p}\xi(x))=f'(p)\neq 0\]
+&lt;/div&gt;</code></pre>
         </section>
 
         <!-- 代码块 -->
