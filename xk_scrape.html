@@ -67,11 +67,11 @@
     <main>
 <!-- packages -->
       <p>
-        一直很想学爬虫，也一直想把厦大选课扒下来，就花了三天时间把这两件事做成了。
-        我最开始是用<code>scrapy</code>，学的差不多了才发现它只能爬静态网站。后来我查到`requests`和`beautifulsoup`
-        用的比较多，有种方法是用`requests`结合AJAX接口，因为不用js渲染网页，所以非常快，我一个大佬朋友的
+        一直很想学爬虫，也一直想把<a href="http://xk.xmu.edu.cn">厦大选课网站</a>扒下来，就花了三天时间把这两件事做成了。
+        我最开始是用<code>scrapy</code>，学的差不多了才发现它只能爬静态网站。后来我查到requests和beautifulsoup
+        用的比较多，有种方法是用requests结合AJAX接口，因为不用js渲染网页，所以非常快，我一个大佬朋友的
         校选课<a href="https://github.com/usamimeri/XMUCourseEnroller">期末project</a>就这样做的，不过他的重点是抢课。
-        我还没搞懂接口是啥玩意，暂时做不了，就先用了`selenium`包。这个包是用来网页测试的，会直接运行浏览器，就像用户在操作
+        我还没搞懂接口是啥玩意，暂时做不了，就先用了selenium包。这个包是用来网页测试的，会直接运行浏览器，就像用户在操作
         一样。但因为要渲染，会慢很多，大概要多花六倍时间。
       </p>
       <section>
@@ -90,15 +90,20 @@ import time
 import pandas as pd
 import numpy as np</code></pre>
         <p>
-          `selenium`中最核心的是webdriver。`TimeoutException, NoSuchElementException`是两种检查加载
-          异常情况的方法，前者是加载超时，需要配合`WebDriverWait`规定的最大等待时长；后者是没找到特定的元素（比如文本框、按钮等）。
-          `EC`是配合`WebDriverWait`用的，常见语法是
+          selenium中最核心的是webdriver。<code>TimeoutException, NoSuchElementException</code>是两种检查加载
+          异常情况的方法，前者是加载超时，需要配合WebDriverWait规定的最大等待时长；后者是没找到特定的元素（比如文本框、按钮等）。
+          EC是配合WebDriverWait用的，常见语法是<code>WebDriverWait(driver,5).until(EC.presence_of_element_located())</code>
+          By用来指定辨别元素位置的方法，有<code>CLASS_NAME,ID,TAG_NAME</code>等等。ActionChains可以操作鼠标，Keys操作键盘。
+          PIL获取验证码图片，显示出来，验证码是用<code>base64</code>编码的。<code>io</code>也是这部分相关。<code>time.sleep()</code>
+          挺有用，等待几秒让页面加载。pandas和numpy用在最后的数据处理。
         </p>
       </section>
 
 
 <!-- login -->
-      <pre><code class="language-python">def login(driver,url):
+      <section>
+        <h2>登录</h2>
+        <pre><code class="language-python">def login(driver,url):
     max_attempts = 10
     attempt = 0
 
@@ -118,10 +123,6 @@ import numpy as np</code></pre>
 
         except NoSuchElementException:
             print("页面加载失败")
-            driver.refresh()
-
-        except TimeoutException:
-            print("页面加载超时")
             driver.refresh()
 
     vcode_img_src = driver.find_element(By.ID,"vcodeImg").get_attribute('src')
@@ -146,7 +147,13 @@ import numpy as np</code></pre>
     # 等一下，然后刷新，跳过轮次选择
     time.sleep(5)
     driver.refresh()</code></pre>
-
+      <p>
+        选课系统经常犯病，要么加载不出来要么不显示验证码，“验证码正常显示”是页面加载成功的标志，所以要一直刷新直到
+        验证码出现。光有<code>vcode = driver.find_element(By.ID,'vcodeImg')</code>还不够，因为验证码不显示时会出现vcodeImg
+        这个tag但图片来源src实际是空的。因此用<code>vcode_src = vcode.get_attribute('src')</code>做判别。
+      </p>
+      </section>
+      
       <pre><code class="language-python">
 def refresher(driver,method,path):
     while True:
