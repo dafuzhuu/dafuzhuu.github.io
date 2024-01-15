@@ -196,12 +196,13 @@ def refresher(driver,method,path):
     except NoSuchElementException:
         print("没找到")</code></pre>
         <p>
-          
+          与上面<code>refresher()</code>的逻辑一样，点击指向的位置。
         </p>
       </section>
 
-      <pre><code class="language-python">
-def replace_newlines(s):
+      <section>
+        <h2>'\n'调整函数</h2>
+        <pre><code class="language-python">def replace_newlines(s):
     '''
     只保留前4个\n和最后9个\n,解决开课时间地点存在多个\n的问题
     '''
@@ -218,11 +219,12 @@ def replace_newlines(s):
     # 构建新的字符串，替换掉不需要保留的'\n'
     new_s = ''.join([char if pos in keep_positions or char != '\n' else ',' for pos, char in enumerate(s)])
 
-    return new_s
-      </code></pre>
+    return new_s</code></pre>
+      </section>
 
-      <pre><code class="language-python">
-def scrape(driver,findhead,findelement):
+      <section>
+        <h2>爬虫函数</h2>
+        <pre><code class="language-python">def scrape(driver,findhead,findelement):
     courses = []
     # 检查是否加载完成
     try:
@@ -245,9 +247,10 @@ def scrape(driver,findhead,findelement):
         if col[6].text == '':   # 开课单位在第7列
             info.insert(6,'--') # 插入第6、7列之间，成为第7列
         courses.extend(info)
-    return header,courses
-      </code></pre>
-
+    return header,courses</code></pre>
+        <p><code>courses = []</code>是临时变量，收集仅一页的课程内容。</p>
+      </section>
+        
       <pre><code class="language-python">
 def next_page(driver,next_button_class):
     try:
