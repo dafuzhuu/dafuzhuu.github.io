@@ -282,13 +282,11 @@ def refresher(driver,method,path):
 
       <section>
         <h2>获取页码和制作数据框函数</h2>
-        <pre><code class="language-python">
-def get_page(driver):
+        <pre><code class="language-python">def get_page(driver):
     page = driver.find_element(By.CLASS_NAME,'number.active').text
     return page</code></pre>
 
-      <pre><code class="language-python">
-def make_df(header,courses):
+      <pre><code class="language-python">def make_df(header,courses):
     reshaped_courses = np.array(courses).reshape(-1,14)
     df = pd.DataFrame(reshaped_courses,columns=header)
     return df</code></pre>
@@ -297,8 +295,7 @@ def make_df(header,courses):
       <section>
         <h2>正式登录</h2>
         <p>这一段的作用是成功登录并导引到“全校课程查询”，这部分已经相当稳定。</p>
-        <pre><code class="language-python">
-driver = webdriver.Chrome()
+        <pre><code class="language-python">driver = webdriver.Chrome()
 url = 'http://xk.xmu.edu.cn/'
 
 login(driver,url)
@@ -335,8 +332,7 @@ AllCourses = []</code></pre>
         <h2>正式开爬</h2>
         <p>这就开始爬了，同时不断输出当前页码，以便在卡退或被管理员踢出去后能继续。（如果使用requests+ajax的话这个问题应该不会有，因为那样速度快，在被踢之前就能爬完）</p>
         <p>爬完后的数据存在<code>AllCourses</code>里，用<code>make_df</code>就可以输出想要的效果。</p>
-        <pre><code class="language-python">
-while True:
+        <pre><code class="language-python">while True:
     header, courses = scrape(driver,findhead='el-table__header-wrapper',findelement='el-table__row')
     AllCourses.extend(courses)
     page = get_page(driver)
@@ -347,8 +343,7 @@ while True:
         print("已经是最后一页")
         break        </code></pre>
 
-        <pre><code class="language-html">
-df = make_df(header,AllCourses)
+        <pre><code class="language-html">df = make_df(header,AllCourses)
 df.to_excel('courses.xlsx', engine='openpyxl', index=False)</code></pre>
       </section>
     </main>
