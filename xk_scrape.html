@@ -102,7 +102,7 @@ import numpy as np</code></pre>
 
 <!-- login -->
       <section>
-        <h2>登录</h2>
+        <h2>登录函数</h2>
         <pre><code class="language-python">def login(driver,url):
     max_attempts = 10
     attempt = 0
@@ -157,9 +157,11 @@ import numpy as np</code></pre>
         </p>
         <pre><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG8A…P////esyXeZrzNH9b5b8jS0XDc97QwgAAAABJRU5ErkJggg==</code></pre>
         <p>我们只要"base64,"后面的一长串，所以用<code>.split(',')</code>分隔开</p>
-        <p>显示验证码图片，输入后，开始自动填入用户名、密码、验证码，点击登录</p>
+        <p>显示验证码图片，输入后，程序开始自动填入用户名、密码、验证码，点击登录</p>
       </section>
-      
+
+      <section>
+        <h2>刷新函数</h2>
       <pre><code class="language-python">
 def refresher(driver,method,path):
     while True:
@@ -172,18 +174,31 @@ def refresher(driver,method,path):
         except NoSuchElementException:
             # 如果没有找到元素，刷新页面
             print("没找到呃，在刷新了")
-            driver.refresh()
-      </code></pre>
+            driver.refresh()</code></pre>
+        <p>
+          这个函数有三个参数，第一个是<code>driver</code>，无脑填。第二、三个指向某个元素的特征。method指明是用<code>By.CLASS_NAME, By.ID</code>
+          还是其他什么方法找；path给出路径。比如刚才的验证码图片用的是<code>&lt;class = "vcodeImg"&gt;</code>，那么此时<code>method = By.CLASS_NAME</code>，
+          <code>path = "vcodeImg"</code>。
+        </p>
+        <p>
+          检测到这个特征后，停止刷新，break掉；如果没检测到，则一直刷新直到这个元素（特征）出现。<code>time.sleep(3)</code>是必要的
+          因为这选课网站很脑瘫，只给他一两秒加载不出来。
+        </p>
+      </section>
 
-      <pre><code class="language-python">
-def clickit(driver,method,path):
+      <section>
+        <h2>点击函数</h2>
+        <pre><code class="language-python">def clickit(driver,method,path):
     try:
         button = driver.find_element(method,path)
         button.click()
         print("已点击")
     except NoSuchElementException:
-        print("没找到")
-      </code></pre>
+        print("没找到")</code></pre>
+        <p>
+          
+        </p>
+      </section>
 
       <pre><code class="language-python">
 def replace_newlines(s):
