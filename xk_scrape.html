@@ -262,9 +262,10 @@ def refresher(driver,method,path):
           若为空则插入"--"。完美解决。
         </p>
       </section>
-        
-      <pre><code class="language-python">
-def next_page(driver,next_button_class):
+
+      <section>
+        <h2>翻页函数</h2>
+        <pre><code class="language-python">def next_page(driver,next_button_class):
     try:
         next_button = WebDriverWait(driver,10).until(
             EC.element_to_be_clickable((By.CLASS_NAME, next_button_class))
@@ -273,23 +274,30 @@ def next_page(driver,next_button_class):
     # 若发生错误
     except Exception as e:
         print("翻页发生错误：",e)
-        return False
-      </code></pre>
+        return False</code></pre>
+        <p>
+          这里用了<code>.element_to_be_clickable</code>，如果可以点下一页就点，不行就报错并返回False。
+        </p>
+      </section>
 
-      <pre><code class="language-python">
+      <section>
+        <h2>获取页码和制作数据框函数</h2>
+        <pre><code class="language-python">
 def get_page(driver):
     page = driver.find_element(By.CLASS_NAME,'number.active').text
-    return page
-      </code></pre>
+    return page</code></pre>
 
       <pre><code class="language-python">
 def make_df(header,courses):
     reshaped_courses = np.array(courses).reshape(-1,14)
     df = pd.DataFrame(reshaped_courses,columns=header)
-    return df
-      </code></pre>
+    return df</code></pre>
+      </section>
 
-      <pre><code class="language-python">
+      <section>
+        <h2>正式登录</h2>
+        <p>这一段的作用是成功登录并导引到“全校课程查询”，这部分已经相当稳定。</p>
+        <pre><code class="language-python">
 driver = webdriver.Chrome()
 url = 'http://xk.xmu.edu.cn/'
 
@@ -320,10 +328,14 @@ actions = ActionChains(driver)
 actions.move_by_offset(100,100).click().perform()
 clickit(driver,By.XPATH,'//*[@id="xsxkapp"]/div/div[1]/ul/li[8]/span')
 
-AllCourses = []
-      </code></pre>
+AllCourses = []</code></pre>
+      </section>
 
-      <pre><code class="language-python">
+      <section>
+        <h2>正式开爬</h2>
+        <p>这就开始爬了，同时不断输出当前页码，以便在卡退或被管理员踢出去后能继续。（如果使用requests+ajax的话这个问题应该不会有，因为那样速度快，在被踢之前就能爬完）</p>
+        <p>爬完后的数据存在<code>AllCourses</code>里，用<code>make_df</code>就可以输出想要的效果。</p>
+        <pre><code class="language-python">
 while True:
     header, courses = scrape(driver,findhead='el-table__header-wrapper',findelement='el-table__row')
     AllCourses.extend(courses)
@@ -333,13 +345,12 @@ while True:
     current_page = get_page(driver)
     if notactive:
         print("已经是最后一页")
-        break        
-      </code></pre>
+        break        </code></pre>
 
-      <pre><code class="language-html">
+        <pre><code class="language-html">
 df = make_df(header,AllCourses)
-df.to_excel('courses.xlsx', engine='openpyxl', index=False)        
-      </code></pre>
+df.to_excel('courses.xlsx', engine='openpyxl', index=False)</code></pre>
+      </section>
     </main>
     <footer>
       <div>2024 &copy; <a href="https://github.com/ultimate233/ultimate233.github.io">zzzzdf page</a></div>
