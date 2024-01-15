@@ -36,8 +36,6 @@
       transform: scale(1.1);
       background-color: lightgray;
     }
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     .footer {
       color: gray;
       text-align: center;
@@ -55,14 +53,30 @@
       overflow: auto; /* 内容超出时显示滚动条 */
       white-space: pre; /* 保留空格和换行 */
     }
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
   </style>
+  <title>Selenium爬厦大选课网站</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
   <body>
+    <a href="index.html" class="home-button">返回主页</a>
+    <header>
+      <h1>Selenium爬厦大选课网站</h1>
+    </header>
     <main>
-
 <!-- packages -->
-      <pre><code class="language-python">from selenium import webdriver
+      <p>
+        一直很想学爬虫，也一直想把厦大选课扒下来，就花了三天时间把这两件事做成了。
+        我最开始是用`scrapy`，学的差不多了才发现它只能爬静态网站。后来我查到`requests`和`beautifulsoup`
+        用的比较多，有种方法是用`requests`结合AJAX接口，因为不用js渲染网页，所以非常快，我一个大佬朋友的
+        校选课[期末project](https://github.com/usamimeri/XMUCourseEnroller)就这样做的，不过他的重点是抢课。
+        我还没搞懂接口是啥玩意，暂时做不了，就先用了`selenium`包。这个包是用来网页测试的，会直接运行浏览器，就像用户在操作
+        一样。但因为要渲染，会慢很多，大概要多花六倍时间。
+      </p>
+      <section>
+        <h2>加载必要的包</h2>
+        <pre><code class="language-python">from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -75,6 +89,13 @@ import io
 import time
 import pandas as pd
 import numpy as np</code></pre>
+        <p>
+          `selenium`中最核心的是webdriver。`TimeoutException, NoSuchElementException`是两种检查加载
+          异常情况的方法，前者是加载超时，需要配合`WebDriverWait`规定的最大等待时长；后者是没找到特定的元素（比如文本框、按钮等）。
+          `EC`是配合`WebDriverWait`用的，常见语法是
+        </p>
+      </section>
+
 
 <!-- login -->
       <pre><code class="language-python">def login(driver,url):
