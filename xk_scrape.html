@@ -147,11 +147,17 @@ import numpy as np</code></pre>
     # 等一下，然后刷新，跳过轮次选择
     time.sleep(5)
     driver.refresh()</code></pre>
-      <p>
-        选课系统经常犯病，要么加载不出来要么不显示验证码，“验证码正常显示”是页面加载成功的标志，所以要一直刷新直到
-        验证码出现。光有<code>vcode = driver.find_element(By.ID,'vcodeImg')</code>还不够，因为验证码不显示时会出现vcodeImg
-        这个tag但图片来源src实际是空的。因此用<code>vcode_src = vcode.get_attribute('src')</code>做判别。
-      </p>
+        <p>
+          选课系统经常犯病，要么加载不出来要么不显示验证码，“验证码正常显示”是页面加载成功的标志，所以要一直刷新直到
+          验证码出现。光有<code>vcode = driver.find_element(By.ID,'vcodeImg')</code>还不够，因为验证码不显示时会出现vcodeImg
+          这个tag但图片来源src实际是空的。因此用<code>vcode_src = vcode.get_attribute('src')</code>做判别。
+        </p>
+        <p>
+          下面对vcode_img_src进行解码，这里举个例子
+        </p>
+        <pre><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG8A…P////esyXeZrzNH9b5b8jS0XDc97QwgAAAABJRU5ErkJggg==</code></pre>
+        <p>我们只要"base64,"后面的一长串，所以用<code>.split(',')</code>分隔开</p>
+        <p>显示验证码图片，输入后，开始自动填入用户名、密码、验证码，点击登录</p>
       </section>
       
       <pre><code class="language-python">
