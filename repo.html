@@ -36,6 +36,22 @@
       transform: scale(1.1);
       background-color: lightgray;
     }
+    .topic {
+        font-weight: bold;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0;
+        background-color: white
+        color: black;                
+        text-align: center;
+        text-decoration: none;   
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+      }
+    .topic:hover {
+        transform: scale(1.1); /* 放大 */
+        background-color: lightgray; /* 悬停时的背景颜色 */
+    }
     footer {
       color: gray;
       text-align: center;
@@ -75,7 +91,7 @@
         <h2>Coursera课程清单</h2>
         <section>
           <h3>In progress</h3>
-          <a href="https://www.coursera.org/learn/differential-equations-engineers?specialization=mathematics-engineers">Differential Equations for Engineers</a>
+          <a href="https://www.coursera.org/learn/differential-equations-engineers?specialization=mathematics-engineers" class="topic">Differential Equations for Engineers</a>
         </section>
         <h3>Wishlist</h3>
         <p>一些看起来不错的课，不要有压力</p>
