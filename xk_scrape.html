@@ -96,7 +96,8 @@ import numpy as np</code></pre>
         <p>
           selenium中最核心的是webdriver。<code>TimeoutException, NoSuchElementException</code>是两种检查加载
           异常情况的方法，前者是加载超时，需要配合WebDriverWait规定的最大等待时长；后者是没找到特定的元素（比如文本框、按钮等）。
-          EC是配合WebDriverWait用的，常见语法是<code>WebDriverWait(driver,5).until(EC.presence_of_element_located())</code>
+          EC是配合WebDriverWait用的，常见语法是
+          <pre><code>WebDriverWait(driver,5).until(EC.presence_of_element_located())</code></pre>
           By用来指定辨别元素位置的方法，有<code>CLASS_NAME,ID,TAG_NAME</code>等等。ActionChains可以操作鼠标，Keys操作键盘。
           PIL获取验证码图片，显示出来，验证码是用<code>base64</code>编码的。<code>io</code>也是这部分相关。<code>time.sleep()</code>
           挺有用，等待几秒让页面加载。pandas和numpy用在最后的数据处理。
