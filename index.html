@@ -34,10 +34,25 @@
         border-radius: 5px;
         transition: transform 0.3s ease;
       }
-
       .topic:hover {
           transform: scale(1.1); /* 放大 */
           background-color: lightgray; /* 悬停时的背景颜色 */
+      }
+      .menu {
+        font-family: sans-serif;
+        display: inline-block;
+        padding: 2.5px 5px;
+        marin: 1px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 2.5px;
+        transition: transform 0.3s ease;
+      }
+      .menu:hover {
+        transform: scale(1.1);
+        background-color: whitesmoke;
       }
       .center {
         text-align: center;
@@ -60,6 +75,9 @@
       </section>
 
       <hr />
+      <section>
+        <a href="index.html" class="menu">Blog</a><a href="index.html" class="menu">Book</a>
+      </section>
       <h3 style="color:darkgray;font-family:sans-serif;">2024</h3>
       <section>
         <a href="repo.html" class="topic">按钮收藏柜</a>
