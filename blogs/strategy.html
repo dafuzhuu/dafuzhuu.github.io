@@ -4,6 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/base.css">
     <style>
+      .table-container {
+        width: 100%; /* 容器宽度 */
+        overflow-x: auto; /* 横向滚动条 */
+      }
       table {
         border-collapse: collapse;
         width: 100%;
@@ -49,6 +53,7 @@
         <!-- 表格 -->
         <section>
           <h3>日调仓与收益率</h3>
+          <div class="table-container">
           <table>
             <thead>
               <tr>
@@ -73,6 +78,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </section>
     </main>
     <footer>
