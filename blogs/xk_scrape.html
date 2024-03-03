@@ -1,0 +1,359 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: 'Times New Roman', serif;
+        margin-left: 26%;
+        margin-right: 26%;
+        margin-top: 40px;
+        line-height: 1.6; /* 行间距 */
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: red;
+      }
+      .home-button {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 10px 0;
+        background-color: white;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .home-button:hover {
+        color: inherit;
+        transform: scale(1.1);
+        background-color: lightgray;
+      }
+      footer {
+        color: gray;
+        text-align: center;
+        padding: 20px 0;
+      }
+      pre {
+        color: #000; /* 文字颜色 */
+        background: #fff; /* 背景颜色 */
+        border: 1px solid #000; /* 边框颜色 */
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* 立体阴影效果 */
+        font-family: monospace; /* 等宽字体 */
+        padding: 1em;
+        border-radius: 4px; /* 轻微的圆角 */
+        margin: 1em 0; /* 保证周围有空间 */
+        overflow: auto; /* 内容超出时显示滚动条 */
+        white-space: pre; /* 保留空格和换行 */
+      }
+    </style>
+    <title>Selenium爬厦大选课网站</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  </head>
+  <body>
+    <a href="index.html" class="home-button">返回主页</a>
+    <header>
+      <h1>Selenium爬厦大选课网站</h1>
+    </header>
+    <main>
+<!-- packages -->
+      <p>
+        一直很想学爬虫，也一直想把<a href="http://xk.xmu.edu.cn">厦大选课网站</a>扒下来，就花了三天时间把这两件事做成了。
+        我最开始是用<code>scrapy</code>，学的差不多了才发现它只能爬静态网站。后来我查到requests和beautifulsoup
+        用的比较多，有种方法是用requests结合AJAX接口，因为不用js渲染网页，所以非常快，我一个大佬朋友的
+        校选课<a href="https://github.com/usamimeri/XMUCourseEnroller">期末project</a>就这样做的，不过他的重点是抢课。
+        我还没搞懂接口是啥玩意，暂时做不了，就先用了selenium包。这个包是用来网页测试的，会直接运行浏览器，就像用户在操作
+        一样。但因为要渲染，会慢很多，大概要多花六倍时间。
+      </p>
+      <p>本篇内容已放入\(\Rightarrow\)<a href="https://github.com/ultimate233/XMUCourseScraper">XMUCourseScraper</a></p>
+      <section>
+        <h2>加载必要的包</h2>
+        <pre><code class="language-python">from selenium import webdriver
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from PIL import Image
+import base64
+import io
+import time
+import pandas as pd
+import numpy as np</code></pre>
+        <p>
+          selenium中最核心的是webdriver。<code>TimeoutException, NoSuchElementException</code>是两种检查加载
+          异常情况的方法，前者是加载超时，需要配合WebDriverWait规定的最大等待时长；后者是没找到特定的元素（比如文本框、按钮等）。
+          EC是配合WebDriverWait用的，常见语法是
+          <pre><code>WebDriverWait(driver,5).until(EC.presence_of_element_located())</code></pre>
+          By用来指定辨别元素位置的方法，有<code>CLASS_NAME,ID,TAG_NAME</code>等等。ActionChains可以操作鼠标，Keys操作键盘。
+          PIL获取验证码图片，显示出来，验证码是用<code>base64</code>编码的。<code>io</code>也是这部分相关。<code>time.sleep()</code>
+          挺有用，等待几秒让页面加载。pandas和numpy用在最后的数据处理。
+        </p>
+      </section>
+
+
+<!-- login -->
+      <section>
+        <h2>登录函数</h2>
+        <pre><code class="language-python">def login(driver,url):
+    max_attempts = 10
+    attempt = 0
+
+    while attempt < max_attempts:
+        try:
+            driver.get(url)
+            time.sleep(3)
+            vcode = driver.find_element(By.ID,'vcodeImg')
+            vcode_src = vcode.get_attribute('src')
+            
+            if vcode_src:
+                print("加载成功")
+                break
+            else:
+                print("页面加载成功，验证码显示失败")
+                driver.refresh()
+
+        except NoSuchElementException:
+            print("页面加载失败")
+            driver.refresh()
+
+    vcode_img_src = driver.find_element(By.ID,"vcodeImg").get_attribute('src')
+    img_data = vcode_img_src.split(',')[1]
+    img_bytes = base64.b64decode(img_data)
+    img = Image.open(io.BytesIO(img_bytes))
+    display(img)
+    input_captcha = input("请输入验证码：")
+
+    username = driver.find_element(By.ID,'loginNameDiv').find_element(By.CLASS_NAME,'el-input__inner')
+    username.send_keys('username') # 填入用户名
+    password = driver.find_element(By.ID,'loginPwdDiv').find_element(By.CLASS_NAME,'el-input__inner')
+    password.send_keys('password') # 填入密码
+    captcha = driver.find_element(By.CLASS_NAME,'cv-verification-code').find_element(By.ID,'verifyCode')
+    captcha.send_keys(input_captcha)
+
+    # 点击“登录”
+    button = driver.find_element(By.CLASS_NAME,'longin-button')
+    button.click()
+    print("点击“登录”")
+
+    # 等一下，然后刷新，跳过轮次选择
+    time.sleep(5)
+    driver.refresh()</code></pre>
+        <p>
+          选课系统经常犯病，要么加载不出来要么不显示验证码，“验证码正常显示”是页面加载成功的标志，所以要一直刷新直到
+          验证码出现。光有<code>vcode = driver.find_element(By.ID,'vcodeImg')</code>还不够，因为验证码不显示时会出现vcodeImg
+          这个tag但图片来源src实际是空的。因此用<code>vcode_src = vcode.get_attribute('src')</code>做判别。
+        </p>
+        <p>
+          下面对vcode_img_src进行解码，这里举个例子
+        </p>
+        <pre><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG8A…P////esyXeZrzNH9b5b8jS0XDc97QwgAAAABJRU5ErkJggg==</code></pre>
+        <p>我们只要"base64,"后面的一长串，所以用<code>.split(',')</code>分隔开</p>
+        <p>显示验证码图片，输入后，程序开始自动填入用户名、密码、验证码，点击登录</p>
+      </section>
+
+      <section>
+        <h2>刷新函数</h2>
+      <pre><code class="language-python">
+def refresher(driver,method,path):
+    while True:
+        try:
+            element = driver.find_element(method, path)
+            time.sleep(3) 
+            if element:
+                print("找到了!")
+                break  # 如果找到了元素，跳出循环
+        except NoSuchElementException:
+            # 如果没有找到元素，刷新页面
+            print("没找到呃，在刷新了")
+            driver.refresh()</code></pre>
+        <p>
+          这个函数有三个参数，第一个是<code>driver</code>，无脑填。第二、三个指向某个元素的特征。method指明是用<code>By.CLASS_NAME, By.ID</code>
+          还是其他什么方法找；path给出路径。比如刚才的验证码图片用的是<code>&lt;class = "vcodeImg"&gt;</code>，那么此时<code>method = By.CLASS_NAME</code>，
+          <code>path = "vcodeImg"</code>。
+        </p>
+        <p>
+          检测到这个特征后，停止刷新，break掉；如果没检测到，则一直刷新直到这个元素（特征）出现。<code>time.sleep(3)</code>是必要的
+          因为这选课网站很脑瘫，只给他一两秒加载不出来。
+        </p>
+      </section>
+
+      <section>
+        <h2>点击函数</h2>
+        <pre><code class="language-python">def clickit(driver,method,path):
+    try:
+        button = driver.find_element(method,path)
+        button.click()
+        print("已点击")
+    except NoSuchElementException:
+        print("没找到")</code></pre>
+        <p>
+          与上面<code>refresher()</code>的逻辑一样，点击指向的位置。
+        </p>
+      </section>
+
+      <section>
+        <h2>'\n'调整函数</h2>
+        <pre><code class="language-python">def replace_newlines(s):
+    '''
+    只保留前4个\n和最后9个\n,解决开课时间地点存在多个\n的问题
+    '''
+    # 找到所有的'\n'的位置
+    newline_positions = [pos for pos, char in enumerate(s) if char == '\n']
+
+    # 如果'\n'的数量少于13个，不需要替换
+    if len(newline_positions) < 13:
+        return s
+
+    # 保留前4个和后9个'\n'的位置
+    keep_positions = set(newline_positions[:4] + newline_positions[-9:])
+
+    # 构建新的字符串，替换掉不需要保留的'\n'
+    new_s = ''.join([char if pos in keep_positions or char != '\n' else ',' for pos, char in enumerate(s)])
+
+    return new_s</code></pre>
+      </section>
+      
+      <section>
+        <h2>爬虫函数</h2>
+        <pre><code class="language-python">def scrape(driver,findhead,findelement):
+    courses = []
+    # 检查是否加载完成
+    try:
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME,"el-table__row")))
+        print("加载成功！")
+    except TimeoutException:
+        # refresher(driver,By.CLASS_NAME,'el-table__row')
+        # clickit(driver,By.XPATH,'//*[@id="xsxkapp"]/div/div[1]/ul/li[8]/span')
+        print("超时了")
+        breakpoint()
+    # 获取title
+    header = driver.find_element(By.CLASS_NAME,findhead).text.replace('\n',' ').split(' ')
+    # 获取内容
+    container = driver.find_elements(By.CLASS_NAME,findelement) # rows
+
+    for i in range(len(container)):
+        # 调整开课时间地点的多换行(replace_newlines函数)
+        info = replace_newlines(container[i].text).split('\n')
+        col = container[i].find_elements(By.TAG_NAME,'td') #为了解决部分研究生课程开课单位为空的问题
+        if col[6].text == '':   # 开课单位在第7列
+            info.insert(6,'--') # 插入第6、7列之间，成为第7列
+        courses.extend(info)
+    return header,courses</code></pre>
+        <p>
+          <code>courses = []</code>是临时变量，收集仅一页的课程内容。加载成功的信号是出现<code>&lt;class="el-table__row"&gt;</code>的标签，等待时间五秒。
+          如果加载成功则继续，否则产生断点。<code>header</code>的作用是获取列名。
+        </p>
+        <p>
+          爬取过程主要有两个问题：一是开课时间地点栏会有异常的'\n'，因为有些课时间信息不连续，比如“1-7周”，“9-16”周，这中间就有&lt;br&gt;产生的换行，
+          用<code>.text</code>翻译后就变成'\n'，若直接split会使得一行出现超过14列，导致无法产生整齐dataframe。二是有些研究生课程开课单位为空，此时会导致
+          某些行少于14列。
+        </p>
+        <p>
+          第一点可以用<code>replace_newlines</code>函数解决。为解决第二点，做每一列的切片，检查第七列（<code>index=6</code>）是否为空，
+          若为空则插入"--"。完美解决。
+        </p>
+      </section>
+
+      <section>
+        <h2>翻页函数</h2>
+        <pre><code class="language-python">def next_page(driver,next_button_class):
+    try:
+        next_button = WebDriverWait(driver,10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, next_button_class))
+        )
+        next_button.click()
+    # 若发生错误
+    except Exception as e:
+        print("翻页发生错误：",e)
+        return False</code></pre>
+        <p>
+          这里用了<code>.element_to_be_clickable</code>，如果可以点下一页就点，不行就报错并返回False。
+        </p>
+      </section>
+
+      <section>
+        <h2>获取页码和制作数据框函数</h2>
+        <pre><code class="language-python">def get_page(driver):
+    page = driver.find_element(By.CLASS_NAME,'number.active').text
+    return page</code></pre>
+
+      <pre><code class="language-python">def make_df(header,courses):
+    reshaped_courses = np.array(courses).reshape(-1,14)
+    df = pd.DataFrame(reshaped_courses,columns=header)
+    return df</code></pre>
+      </section>
+
+      <section>
+        <h2>正式登录</h2>
+        <p>这一段的作用是成功登录并导引到“全校课程查询”，这部分已经相当稳定。</p>
+        <pre><code class="language-python">driver = webdriver.Chrome()
+url = 'http://xk.xmu.edu.cn/'
+
+login(driver,url)
+
+# 有时点“登录”会犯病显示502，需要刷新重来
+while True:
+    try:
+        # 若出现“选课”键说明登录成功
+        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME,'courseBtn')))
+        print("登陆成功")
+        break
+
+    except:
+        login(driver,url)
+
+# 等它加载
+# 当出现“选课”时，点击
+enter = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME,'courseBtn')))
+enter.click()
+print("点击“选课”")
+
+refresher(driver,method=By.CLASS_NAME,path="el-link--inner")
+
+# 等待一秒，点击任意处跳过“选课指导”界面
+time.sleep(1)
+actions = ActionChains(driver)
+actions.move_by_offset(100,100).click().perform()
+clickit(driver,By.XPATH,'//*[@id="xsxkapp"]/div/div[1]/ul/li[8]/span')
+
+AllCourses = []</code></pre>
+      </section>
+
+      <section>
+        <h2>正式开爬</h2>
+        <p>这就开始爬了，同时不断输出当前页码，以便在卡退或被管理员踢出去后能继续。（如果使用requests+ajax的话这个问题应该不会有，因为那样速度快，在被踢之前就能爬完）</p>
+        <p>爬完后的数据存在<code>AllCourses</code>里，用<code>make_df</code>就可以输出想要的效果。</p>
+        <pre><code class="language-python">while True:
+    header, courses = scrape(driver,findhead='el-table__header-wrapper',findelement='el-table__row')
+    AllCourses.extend(courses)
+    page = get_page(driver)
+    print(f"爬完第{page}页啦")
+    notactive = next_page(driver,'btn-next')
+    current_page = get_page(driver)
+    if notactive:
+        print("已经是最后一页")
+        break        </code></pre>
+
+        <pre><code class="language-html">df = make_df(header,AllCourses)
+df.to_excel('courses.xlsx', engine='openpyxl', index=False)</code></pre>
+      </section>
+    </main>
+    <footer>
+      <div>2024 &copy; <a href="https://github.com/ultimate233/ultimate233.github.io">zzzzdf page</a></div>
+    </footer>
+  </body>
+</html>
