@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: 'Times New Roman', serif;
+        margin-left: 26%;
+        margin-right: 26%;
+        margin-top: 40px;
+        line-height: 1.6; <!-- 行间距 -->
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: red;
+      }
+      .center {
+        text-align: center;
+      }
+      .home-button {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 10px 0;
+        background-color: white;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .home-button:hover {
+        color: inherit;
+        transform: scale(1.1);
+        background-color: lightgray;
+      }
+      footer {
+        color: gray;
+        text-align: center;
+        padding: 20px 0;
+      }
+      pre {
+        color: #000; /* 文字颜色 */
+        background: #fff; /* 背景颜色 */
+        border: 1px solid #000; /* 边框颜色 */
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.2); /* 立体阴影效果 */
+        font-family: monospace; /* 等宽字体 */
+        padding: 1em;
+        border-radius: 4px; /* 轻微的圆角 */
+        margin: 1em 0; /* 保证周围有空间 */
+        overflow: auto; /* 内容超出时显示滚动条 */
+        white-space: pre; /* 保留空格和换行 */
+      }
+      .latex-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+    
+      th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+      }
+    
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <title>量化选股一号</title>
+
+    <!-- 自定义图标 -->
+    <link rel="icon" href="../static/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+    <!-- 代码块高亮 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+
+    <!-- 引入Mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  </head>
+  
+  <body>
+    <a href="../pages/index.html" class="home-button">返回主页</a>
+    <header>
+      <h1>量化选股一号</h1>
+    </header>
+    <main>
+      <p>
+        选择行情和资金流动因子，用catboost选股
+      </p>
+        <!-- 表格 -->
+        <section>
+          <h3>表格</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>日期</th>
+                <th>仓位1</th>
+                <th>收益1</th>
+                <th>仓位2</th>
+                <th>收益2</th>
+                <th>仓位3</th>
+                <th>收益3</th>
+                <th>仓位4</th>
+                <th>收益4</th>
+                <th>仓位5</th>
+                <th>收益5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024.03.04</td>
+                <td>000413.SZ</td>
+                <td></td>
+                <td>600460.SH</td>
+                <td></td>
+                <td>600570.SH</td>
+                <td></td>
+                <td>600988.SH</td>
+                <td></td>
+                <td>601899.SH</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+    </main>
+    <footer>
+      <div>2024 &copy; <a href="https://github.com/ultimate233/ultimate233.github.io">zzzzdf page</a></div>
+    </footer>
+  </body>
+</html>
