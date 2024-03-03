@@ -4,5 +4,5 @@
 ---
 
 portal：
-- [主页](/pages)
+- [主页](https://zzzzdf.page/pages)
 
