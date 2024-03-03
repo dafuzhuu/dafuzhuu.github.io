@@ -1,8 +1,8 @@
 body {
-  font-size: 16px;
-  font-family: 'Times New Roman', serif;
-  margin-left: 15%;
-  margin-right: 15%;
+  font-size: 18px;
+  font-family: 'Times New Roman', arial;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 40px;
   line-height: 1.6; <!-- 行间距 -->
 }
