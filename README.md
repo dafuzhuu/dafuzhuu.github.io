@@ -1,5 +1,5 @@
-# 我的博客
+# 我的网站
 
-[主页](https://zzzzdf.page/pages)
+[博客主页](https://zzzzdf.page/pages)
 
 [GRE自制单词](http://111.230.46.76/)
