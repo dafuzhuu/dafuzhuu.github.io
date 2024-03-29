@@ -6,11 +6,27 @@
 <title>ECharts Example</title>
 <!-- 引入 echarts 库 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+<style>
+/* 将 body 设置为 flex 容器，并使其子元素在水平和垂直方向上都居中 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 设置图表容器的样式 */
+#main {
+  width: 800px;
+  height: 600px;
+}
+</style>
 </head>
 <body>
 
 <!-- 用于承载 echarts 图表的 div 元素 -->
-<div id="main" style="width: 600px;height:400px;"></div>
+<div id="main"></div>
 
 <script>
 // 在页面加载完成后执行以下代码
@@ -30,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+      data: ['我的组合', '沪深300', '上证指数']
     },
     grid: {
       left: '3%',
@@ -46,41 +62,29 @@ document.addEventListener('DOMContentLoaded', function() {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      data: ['2024.4', '5', '6', '7', '8', '9', '10']
     },
     yAxis: {
       type: 'value'
     },
     series: [
       {
-        name: 'Email',
+        name: '我的组合',
         type: 'line',
         stack: 'Total',
-        data: [120, 132, 101, 134, 90, 230, 210]
+        data: [100, 100, 100, 100, 100, 100, 100]
       },
       {
-        name: 'Union Ads',
+        name: '沪深300',
         type: 'line',
         stack: 'Total',
-        data: [220, 182, 191, 234, 290, 330, 310]
+        data: [100, 100, 100, 100, 100, 100, 100]
       },
       {
-        name: 'Video Ads',
+        name: '上证指数',
         type: 'line',
         stack: 'Total',
-        data: [150, 232, 201, 154, 190, 330, 410]
-      },
-      {
-        name: 'Direct',
-        type: 'line',
-        stack: 'Total',
-        data: [320, 332, 301, 334, 390, 330, 320]
-      },
-      {
-        name: 'Search Engine',
-        type: 'line',
-        stack: 'Total',
-        data: [820, 932, 901, 934, 1290, 1330, 1320]
+        data: [100, 100, 100, 100, 100, 100, 100]
       }
     ]
   };
