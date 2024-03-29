@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>组合收益</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/base.css">
+<link rel="icon" href="../static/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
 <!-- 引入 echarts 库 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
 <style>
@@ -24,7 +29,7 @@ body {
 </style>
 </head>
 <body>
-
+<a href="/pages/index.html" class="home-button">返回主页</a>
 <!-- 用于承载 echarts 图表的 div 元素 -->
 <div id="main"></div>
 
@@ -40,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-      text: '多因子策略'
+      text: '收益曲线'
     },
     tooltip: {
       trigger: 'axis'
