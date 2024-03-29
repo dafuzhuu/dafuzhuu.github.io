@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECharts Example</title>
+<title>组合收益</title>
 <!-- 引入 echarts 库 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
 <style>
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-      text: 'Stacked Line'
+      text: '多因子策略'
     },
     tooltip: {
       trigger: 'axis'
@@ -71,19 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: '我的组合',
         type: 'line',
-        stack: 'Total',
+        stack: null,
         data: [100, 100, 100, 100, 100, 100, 100]
       },
       {
         name: '沪深300',
         type: 'line',
-        stack: 'Total',
+        stack: null,
         data: [100, 100, 100, 100, 100, 100, 100]
       },
       {
         name: '上证指数',
         type: 'line',
-        stack: 'Total',
+        stack: null,
         data: [100, 100, 100, 100, 100, 100, 100]
       }
     ]
