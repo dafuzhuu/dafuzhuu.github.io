@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['我的组合', '沪深300', '上证指数', '纳斯达克', '标普500', '日经225']
+      data: ['我的组合', '沪深300', '上证指数', '创业板指', '金元顺安元启', '华商新趋势']
     },
     grid: {
       left: '3%',
@@ -56,21 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
         smooth: true
       },
       {
-        name: '纳斯达克',
+        name: '创业板指',
         type: 'line',
         stack: null,
         data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
         smooth: true
       },
       {
-        name: '标普500',
+        name: '金元顺安元启',
         type: 'line',
         stack: null,
         data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
         smooth: true
       },
       {
-        name: '日经225',
+        name: '华商新趋势',
         type: 'line',
         stack: null,
         data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
