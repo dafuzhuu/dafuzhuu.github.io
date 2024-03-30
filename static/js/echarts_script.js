@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['我的组合', '沪深300', '上证指数', '创业板指', '金元顺安元启', '华商新趋势']
+      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '华商新趋势']
     },
     grid: {
       left: '3%',
@@ -50,13 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       {
         name: '上证指数',
-        type: 'line',
-        stack: null,
-        data: [100, 100],
-        smooth: true
-      },
-      {
-        name: '创业板指',
         type: 'line',
         stack: null,
         data: [100, 100],
