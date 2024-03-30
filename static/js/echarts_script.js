@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['2024.4', '2024.5', '2024.6', '2024.7', '2024.8', '2024.9', '2024.10', '2024.11', '2024.12', '2025.1']
+      data: ['2024.4', '2024.5']
     },
     yAxis: {
       type: 'value'
@@ -38,42 +38,42 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '我的组合',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       },
       {
         name: '沪深300',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       },
       {
         name: '创业板指',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       },
       {
         name: '金元顺安元启',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       },
       {
         name: '华商新趋势',
         type: 'line',
         stack: null,
-        data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+        data: [100, 100],
         smooth: true
       }
     ]
