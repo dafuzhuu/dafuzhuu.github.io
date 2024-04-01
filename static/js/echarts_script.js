@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '万家宏观择时A']
+      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启']
     },
     grid: {
       left: '3%',
@@ -34,10 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     series: [
       {
-        name: '我的组合',
+        name: '因子选股',
         type: 'line',
         stack: null,
         data: [1.64],
+        smooth: true
+      },
+      {
+        name: 'ETF轮动',
+        type: 'line',
+        stack: null,
+        data: [0.57],
         smooth: true
       },
       {
@@ -59,13 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'line',
         stack: null,
         data: [1.82],
-        smooth: true
-      },
-      {
-        name: '万家宏观择时A',
-        type: 'line',
-        stack: null,
-        data: [-1.42],
         smooth: true
       }
     ]
