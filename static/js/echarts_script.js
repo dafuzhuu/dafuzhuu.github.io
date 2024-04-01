@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '万家宏观择时']
+      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '万家宏观择时A']
     },
     grid: {
       left: '3%',
@@ -26,9 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
       containLabel: true
     },
     xAxis: {
-      type: 'category',
       boundaryGap: false,
-      data: ['2024.4', '2024.5']
+      data: ['2024-04-01']
     },
     yAxis: {
       type: 'value'
@@ -38,35 +37,35 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '我的组合',
         type: 'line',
         stack: null,
-        data: [100, 100],
+        data: [1.64],
         smooth: true
       },
       {
         name: '沪深300',
         type: 'line',
         stack: null,
-        data: [100, 100],
+        data: [1.64],
         smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
         stack: null,
-        data: [100, 100],
+        data: [1.19],
         smooth: true
       },
       {
         name: '金元顺安元启',
         type: 'line',
         stack: null,
-        data: [100, 100],
+        data: [1.82],
         smooth: true
       },
       {
-        name: '万家宏观择时',
+        name: '万家宏观择时A',
         type: 'line',
         stack: null,
-        data: [100, 100],
+        data: [-1.42],
         smooth: true
       }
     ]
