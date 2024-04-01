@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         smooth: true
       },
       {
-        name: '华商新趋势',
+        name: '万家宏观择时',
         type: 'line',
         stack: null,
         data: [100, 100],
