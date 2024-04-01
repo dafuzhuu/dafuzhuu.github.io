@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '华商新趋势']
+      data: ['我的组合', '沪深300', '上证指数', '金元顺安元启', '万家宏观择时']
     },
     grid: {
       left: '3%',
