@@ -14,7 +14,10 @@ function accumulate(inputArray) {
     let sum = 0;
     for (let i = 0; i < inputArray.length; i++) {
         sum += inputArray[i];
-        result.push(sum);
+        // 使用 toFixed() 方法将 sum 四舍五入到小数点后两位，并将其转换为字符串
+        // 然后再使用 parseFloat() 方法将其转换为浮点数
+        // 这样可以保留两位小数
+        result.push(parseFloat(sum.toFixed(2)));
     }
     return result;
 }
