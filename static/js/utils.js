@@ -1,12 +1,11 @@
 // utils.js
 
-export function accumulate(data) {
-    return data.reduce((acc, currentValue, index) => {
-        if (index === 0) {
-            acc.push(currentValue);
-        } else {
-            acc.push(acc[index - 1] + currentValue);
-        }
-        return acc;
-    }, []);
+export function accumulate(inputArray) {
+    let result = [];
+    let sum = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+        sum += inputArray[i];
+        result.push(sum);
+    }
+    return result;
 }
