@@ -1,7 +1,16 @@
 // echarts_script.js
 
 import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
-import { accumulate } from './utils.js';
+
+function accumulate(inputArray) {
+    let result = [];
+    let sum = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+        sum += inputArray[i];
+        result.push(sum);
+    }
+    return result;
+}
 
 let result_factor = accumulate(data_factor);
 let result_etf = accumulate(data_etf);
