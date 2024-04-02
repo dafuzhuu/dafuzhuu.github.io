@@ -1,7 +1,28 @@
 // echarts_script.js
 
-import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
-import { accumulate } from './utils.js';
+// import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
+// import { accumulate } from './utils.js';
+
+// config.js
+
+const name = ['因子选股', 'ETF轮动', '沪深300', '上证指数'];
+const dates = ['2024-04-01'];
+const data_factor = [1.64];
+const data_etf = [0.57];
+const data_1A0300 = [1.64];
+const data_1A0001 = [1.19];
+
+// utils.js
+function accumulate(data) {
+    return data.reduce((acc, currentValue, index) => {
+        if (index === 0) {
+            acc.push(currentValue);
+        } else {
+            acc.push(acc[index - 1] + currentValue);
+        }
+        return acc;
+    }, []);
+}
 
 let result_factor = accumulate(data_factor);
 let result_etf = accumulate(data_etf);
