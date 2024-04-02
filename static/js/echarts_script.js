@@ -13,15 +13,14 @@ const data_1A0300 = [1.64,1];
 const data_1A0001 = [1.19,1];
 
 // utils.js
-function accumulate(data) {
-    return data.reduce((acc, currentValue, index) => {
-        if (index === 0) {
-            acc.push(currentValue);
-        } else {
-            acc.push(acc[index - 1] + currentValue);
-        }
-        return acc;
-    }, []);
+function accumulate(inputArray) {
+    let result = [];
+    let sum = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+        sum += inputArray[i];
+        result.push(sum);
+    }
+    return result;
 }
 
 let result_factor = accumulate(data_factor);
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     xAxis: {
       boundaryGap: false,
-      data: dates
+      data: [dates]
     },
     yAxis: {
       type: 'value'
