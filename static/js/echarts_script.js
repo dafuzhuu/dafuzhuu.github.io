@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     xAxis: {
       boundaryGap: false,
-      data: [dates]
+      data: dates
     },
     yAxis: {
       type: 'value'
