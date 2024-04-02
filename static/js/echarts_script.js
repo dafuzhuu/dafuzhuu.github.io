@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: name
+      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数']
     },
     grid: {
       left: '3%',
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     xAxis: {
       boundaryGap: false,
-      data: dates
+      data: ['2024-04-01']
     },
     yAxis: {
       type: 'value'
@@ -73,21 +73,21 @@ document.addEventListener('DOMContentLoaded', function() {
         name: 'ETF轮动',
         type: 'line',
         stack: null,
-        data: result_etf,
+        data: [0.57],
         smooth: true
       },
       {
         name: '沪深300',
         type: 'line',
         stack: null,
-        data: result_1A0300,
+        data: [1.64],
         smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
         stack: null,
-        data: result_1A0001,
+        data: [1.19],
         smooth: true
       }
     ]
