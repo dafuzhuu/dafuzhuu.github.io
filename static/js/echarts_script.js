@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '因子选股',
         type: 'line',
         stack: null,
-        data: result_factor,
+        data: [1.64],
         smooth: true
       },
       {
