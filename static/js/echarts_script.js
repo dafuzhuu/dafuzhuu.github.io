@@ -1,6 +1,6 @@
 // echarts_script.js
 
-import { data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
+import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
 import { accumulate } from './utils.js';
 
 let result_factor = accumulate(data_factor);
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数']
+      data: name
     },
     grid: {
       left: '3%',
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     xAxis: {
       boundaryGap: false,
-      data: ['2024-04-01']
+      data: dates
     },
     yAxis: {
       type: 'value'
