@@ -66,28 +66,28 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '因子选股',
         type: 'line',
         stack: null,
-        data: [1.64],
+        data: [result_factor],
         smooth: true
       },
       {
         name: 'ETF轮动',
         type: 'line',
         stack: null,
-        data: [0.57],
+        data: [result_etf],
         smooth: true
       },
       {
         name: '沪深300',
         type: 'line',
         stack: null,
-        data: [1.64],
+        data: [result_1A0300],
         smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
         stack: null,
-        data: [1.19],
+        data: [result_1A0001],
         smooth: true
       }
     ]
