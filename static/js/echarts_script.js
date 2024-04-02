@@ -1,12 +1,13 @@
 // echarts_script.js
 
 // 数据
-const name = ['因子选股', 'ETF轮动', '沪深300', '上证指数'];
+const name = ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启'];
 const dates = ['2024-04-01', '2024-04-02'];
 const data_factor = [1.64, 1.93];
 const data_etf = [0.57, 0.08];
 const data_1A0300 = [1.64, -0.42];
 const data_1A0001 = [1.19, -0.08];
+const data_004685 = [1.82, 0.28];
 
 // 累加函数
 function accumulate(inputArray) {
@@ -26,6 +27,7 @@ let result_factor = accumulate(data_factor);
 let result_etf = accumulate(data_etf);
 let result_1A0300 = accumulate(data_1A0300);
 let result_1A0001 = accumulate(data_1A0001);
+let result_004685 = accumulate(data_004685);
 
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数']
+      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启']
     },
     grid: {
       left: '3%',
@@ -86,6 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'line',
         stack: null,
         data: result_1A0001,
+        smooth: true
+      },
+      {
+        name: '金元顺安元启',
+        type: 'line',
+        stack: null,
+        data: result_004685,
         smooth: true
       }
     ]
