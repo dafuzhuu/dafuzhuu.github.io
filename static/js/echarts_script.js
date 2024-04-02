@@ -1,6 +1,6 @@
 // echarts_script.js
 
-import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
+import { name, dates, data_factor, data_etf, data_1A0300, data_1A0001 } from 'config.js';
 
 function accumulate(inputArray) {
     let result = [];
