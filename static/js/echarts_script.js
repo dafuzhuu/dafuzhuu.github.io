@@ -1,5 +1,13 @@
 // echarts_script.js
 
+import { data_factor, data_etf, data_1A0300, data_1A0001 } from './config.js';
+import { accumulate } from './utils.js';
+
+let result_factor = accumulate(data_factor);
+let result_etf = accumulate(data_etf);
+let result_1A0300 = accumulate(data_1A0300);
+let result_1A0001 = accumulate(data_1A0001);
+
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
   // 获取图表容器
@@ -17,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启']
+      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数']
     },
     grid: {
       left: '3%',
@@ -37,35 +45,28 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '因子选股',
         type: 'line',
         stack: null,
-        data: [1.64],
+        data: result_factor,
         smooth: true
       },
       {
         name: 'ETF轮动',
         type: 'line',
         stack: null,
-        data: [0.57],
+        data: result_etf,
         smooth: true
       },
       {
         name: '沪深300',
         type: 'line',
         stack: null,
-        data: [1.64],
+        data: result_1A0300,
         smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
         stack: null,
-        data: [1.19],
-        smooth: true
-      },
-      {
-        name: '金元顺安元启',
-        type: 'line',
-        stack: null,
-        data: [1.82],
+        data: result_1A0001,
         smooth: true
       }
     ]
