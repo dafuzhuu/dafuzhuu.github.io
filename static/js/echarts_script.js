@@ -11,11 +11,13 @@ const data_004685 = [1.82, 0.28];
 
 // 累乘函数
 function accumulate(inputArray) {
-    let result = 1;
+    let resultArray = [];
+    let product = 1;
     for (let i = 0; i < inputArray.length; i++) {
-        result *= (1 + inputArray[i]);
+        product *= (1 + inputArray[i]);
+        resultArray.push((product - 1).toFixed(2));
     }
-    return (result - 1).toFixed(2);
+    return resultArray;
 }
 
 let result_factor = accumulate(data_factor);
