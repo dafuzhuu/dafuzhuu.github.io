@@ -14,7 +14,7 @@ function accumulate(inputArray) {
     let resultArray = [];
     let product = 1;
     for (let i = 0; i < inputArray.length; i++) {
-        product *= (1 + inputArray[i]);
+        product *= (1 + 0.01 * inputArray[i]);
         resultArray.push((product - 1).toFixed(2));
     }
     return resultArray;
