@@ -2,12 +2,12 @@
 
 // 数据
 const name = ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启'];
-const dates = ['2024-04-01', '2024-04-02'];
-const data_factor = [1.64, 1.93];
-const data_etf = [0.57, 0.08];
-const data_1A0300 = [1.64, -0.42];
-const data_1A0001 = [1.19, -0.08];
-const data_004685 = [1.82, 0.28];
+const dates = ['2024-04-01', '2024-04-02', '2024-04-03'];
+const data_factor = [1.64, 1.93, 1.15];
+const data_etf = [0.57, 0.08, 1.40];
+const data_1A0300 = [1.64, -0.42, -0.36];
+const data_1A0001 = [1.19, -0.08, -0.18];
+const data_004685 = [1.82, 0.28, 0.41];
 
 // 累乘函数
 function accumulate(inputArray) {
