@@ -9,18 +9,13 @@ const data_1A0300 = [1.64, -0.42];
 const data_1A0001 = [1.19, -0.08];
 const data_004685 = [1.82, 0.28];
 
-// 累加函数
+// 累乘函数
 function accumulate(inputArray) {
-    let result = [];
-    let sum = 0;
+    let result = 1;
     for (let i = 0; i < inputArray.length; i++) {
-        sum += inputArray[i];
-        // 使用 toFixed() 方法将 sum 四舍五入到小数点后两位，并将其转换为字符串
-        // 然后再使用 parseFloat() 方法将其转换为浮点数
-        // 这样可以保留两位小数
-        result.push(parseFloat(sum.toFixed(2)));
+        result *= (1 + inputArray[i]);
     }
-    return result;
+    return (result - 1).toFixed(2);
 }
 
 let result_factor = accumulate(data_factor);
