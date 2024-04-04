@@ -9,7 +9,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 40px;
-  line-height: 1.6; <!-- 行间距 -->
+  line-height: 2; <!-- 行间距 -->
 }
 a {
   color: black; /* 默认链接颜色 */
