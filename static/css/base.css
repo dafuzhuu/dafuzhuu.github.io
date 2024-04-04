@@ -12,12 +12,16 @@ body {
   line-height: 1.6; <!-- 行间距 -->
 }
 a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: black; /* 默认链接颜色 */
+  background-color: white; /* 默认背景颜色 */
+  padding: 5px 10px; /* 设置链接的内边距 */
+  text-decoration: none; /* 去除下划线 */
+  transition: color 0.2s, background-color 0.2s; /* 设置颜色和背景色变换动画 */
 }
+
 a:hover {
-  color: red;
+  color: white; /* 悬停时字体颜色变白 */
+  background-color: black; /* 悬停时背景颜色变黑 */
 }
 .center {
   text-align: center;
