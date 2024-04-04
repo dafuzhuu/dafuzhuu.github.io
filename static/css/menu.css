@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "American Typewriter";
+  src: url("/fonts/American Typewriter Regular.ttf")
+}
+
 hr {
   position: static;
   margin-left: 0;
