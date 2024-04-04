@@ -21,7 +21,6 @@ hr {
 }
 .topic:hover {
     transform: scale(1.02); /* 放大 */
-    background-color: #CCCCFF; /* 悬停时的背景颜色 */
 }
 .menu {
   font-family: serif;
@@ -34,9 +33,6 @@ hr {
   text-decoration: none;
   border-radius: 5px;
   transition: transform 1s ease;
-}
-.menu:hover {
-  background-color: #CCCCFF;
 }
 .center {
   text-align: center;
