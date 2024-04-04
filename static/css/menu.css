@@ -19,7 +19,7 @@ hr {
     background-color: lightgray; /* 悬停时的背景颜色 */
 }
 .menu {
-  font-family: sans-serif;
+  font-family: serif;
   display: inline-block;
   padding: 2px 4px;
   marin: 2px;
