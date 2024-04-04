@@ -27,6 +27,11 @@ a:hover {
   text-align: center;
 }
 
+h1 {
+  border-bottom: 1px solid black;
+  /* 可以根据需要调整下划线的样式 */
+}
+
 .home-button {
   position: absolute;
   top: 15px;
