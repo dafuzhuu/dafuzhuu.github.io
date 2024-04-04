@@ -1,6 +1,11 @@
+@font-face {
+  font-family: "SourceHanSerifSC-Regular";
+  src: url("/fonts/SourceHanSerifSC-Regular.otf")
+}
+
 body {
   font-size: 18px;
-  font-family: Arial, "Microsoft Yahei", serif;
+  font-family: "SourceHanSerifSC-Regular", serif;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 40px;
