@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "SourceHanSerifSC-Regular";
+  font-family: "HanSerifSC";
   src: url("/fonts/SourceHanSerifSC-Regular.otf")
 }
 
 body {
   font-size: 18px;
-  font-family: "SourceHanSerifSC-Regular", serif;
+  font-family: "HanSerifSC", serif;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 40px;
