@@ -26,16 +26,6 @@ let result_1A0300 = accumulate(data_1A0300);
 let result_1A0001 = accumulate(data_1A0001);
 let result_004685 = accumulate(data_004685);
 
-// 在样式表中定义 @font-face
-var style = document.createElement('style');
-style.appendChild(document.createTextNode(
-  '@font-face {' +
-  '  font-family: "SourceHanSerifSC-Regular";' +
-  '  src: url("/fonts/SourceHanSerifSC-Regular.otf") format("opentype");'
-  '}'
-));
-document.head.appendChild(style);
-
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
   // 获取图表容器
@@ -47,10 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-        text: '收益曲线',
-        textStyle: {
-          fontFamily: 'SourceHanSerifSC-Regular' // 使用 @font-face 定义的字体
-        }
+        text: '收益曲线'
     },
     tooltip: {
       trigger: 'axis'
