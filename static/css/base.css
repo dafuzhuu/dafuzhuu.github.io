@@ -17,6 +17,7 @@ a {
   padding: 3px 4px; /* 设置链接的内边距 */
   text-decoration: none; /* 去除下划线 */
   transition: color 0.2s, background-color 0.2s; /* 设置颜色和背景色变换动画 */
+  border-radius: 2px; /* 添加圆角 */
 }
 
 a:hover {
