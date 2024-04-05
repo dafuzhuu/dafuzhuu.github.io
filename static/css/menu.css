@@ -43,14 +43,3 @@ hr {
 .center {
   text-align: center;
 }
-
-/* 设置默认的图片 */
-.github-logo {
-    display: inline-block;
-    width: 18px;
-}
-
-/* 设置悬停时的图片 */
-.github-logo:hover {
-    background-image: url('/static/img/github-mark-white.svg');
-}
