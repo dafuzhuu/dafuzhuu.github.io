@@ -15,10 +15,12 @@ function accumulate(inputArray) {
     let product = 1;
     for (let i = 0; i < inputArray.length; i++) {
         product *= (1 + 0.01 * inputArray[i]);
-        resultArray.push(((product - 1)*100).toFixed(2));
+        let roundedResult = Math.floor((product - 1) * 10000) / 100;
+        resultArray.push(roundedResult.toFixed(2));
     }
     return resultArray;
 }
+
 
 let result_factor = accumulate(data_factor);
 let result_etf = accumulate(data_etf);
