@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 获取图表容器
   var chartDom = document.getElementById('main');
   // 初始化 echarts 实例
-  var myChart = echarts.init(chartDom);
+  var myChart = echarts.init(chartDom, 'roma');
   var option;
 
   // 配置项
