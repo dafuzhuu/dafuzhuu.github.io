@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-        text: '收益曲线'
+        text: '收益'
     },
     tooltip: {
       trigger: 'axis'
