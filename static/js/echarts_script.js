@@ -1,11 +1,10 @@
 // echarts_script.js
 
 // 数据
-const name = ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启'];
+const name = ['因子选股', 'ETF轮动', '上证指数', '金元顺安元启'];
 const dates = ['2024-04-01', '2024-04-02', '2024-04-03', '2024-04-08', '2024-04-09'];
 const data_factor = [1.64, 1.93, 1.15, -0.86, 2.82];
 const data_etf = [0.57, 0.08, 1.40, 2.35, 0.28];
-const data_1A0300 = [1.64, -0.42, -0.36, -0.88, -0.08];
 const data_1A0001 = [1.19, -0.08, -0.18, -0.72, 0.05];
 const data_004685 = [1.82, 0.28, 0.41, -1.23, 0.75];
 
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['因子选股', 'ETF轮动', '沪深300', '上证指数', '金元顺安元启']
+      data: ['因子选股', 'ETF轮动', '上证指数', '金元顺安元启']
     },
     grid: {
       left: '3%',
@@ -71,12 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'line',
         stack: null,
         data: result_etf
-      },
-      {
-        name: '沪深300',
-        type: 'line',
-        stack: null,
-        data: result_1A0300
       },
       {
         name: '上证指数',
