@@ -12,7 +12,7 @@
     <!-- Mathjax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
-<!--     响应式设计 -->
+    <!-- 响应式设计 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 echarts 库 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
@@ -26,31 +26,46 @@
         height: 300px; /* 设置图表容器的高度 */
       }
     </style>
+    <script>
+        window.onload = function() {
+            // 获取所有的 div 标签
+            var divElements = document.querySelectorAll('div');
+            // 获取 div 标签的数量
+            var divCount = divElements.length;
+            // 将数量存储在变量中
+            window.divCount = divCount;
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
   <body>
-    <main>
-      <section>
-        深中18-21\(\rightarrow\)厦大21-25\(\rightarrow\)
-      </section>
-      <hr />
-      <section>
-        <a class="fab fa-github" href="https://github.com/ultimate233/ultimate233.github.io"></a> <!-- GitHub 图标 -->
-        <a href="/pages/index.html">Blog</a> <a href="/pages/trade.html">Trade</a>
-      </section>
-      <section>
-        <a href="/pages/trade/stock.html">股票</a> <a href="">期货</a> <a href="">期权</a> <a href="">固收</a> 
-      </section>
-      <br>
-      <!-- 用于承载 echarts 图表的 div 元素 -->
-      <div id="main"></div>
-      <br>
-      <section>
-        <a href="/static/html/ETF轮动.html">ETF轮动策略</a>
-      </section>
-      <section>
-        <a href="/static/html/因子投资.html">因子选股</a>
-      </section>
-    </main>
+    <section>
+      深中18-21\(\rightarrow\)厦大21-25\(\rightarrow\)
+    </section>
+    <hr />
+    <section>
+      <a class="fab fa-github" href="https://github.com/ultimate233/ultimate233.github.io"></a> <!-- GitHub 图标 -->
+      <a href="/pages/index.html">Blog</a> <a href="/pages/trade.html">Trade</a>
+    </section>
+    <section>
+      <a href="/pages/trade/stock.html">股票（<span id="divCountDisplay"></span>）</a> <a href="">期货</a> <a href="">期权</a> <a href="">固收</a> 
+    </section>
+    <br>
+    <!-- 用于承载 echarts 图表的 div 元素 -->
+    <div id="main"></div>
+    <br>
+    <section>
+      <a href="/static/html/ETF轮动.html">ETF轮动策略</a>
+    </section>
+    <section>
+      <a href="/static/html/因子投资.html">因子选股</a>
+    </section>
+
+    <script>
+      // 在页面加载完成后，更新显示 div 标签数量的元素
+      window.onload = function() {
+          document.getElementById('divCountDisplay').innerText = window.divCount;
+      }
+    </script>
   </body>
 </html>
