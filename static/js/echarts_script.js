@@ -19,10 +19,8 @@ function accumulate(inputArray) {
     return resultArray;
 }
 
-
 let result_factor = accumulate(data_factor);
 let result_etf = accumulate(data_etf);
-let result_1A0300 = accumulate(data_1A0300);
 let result_1A0001 = accumulate(data_1A0001);
 let result_004685 = accumulate(data_004685);
 
