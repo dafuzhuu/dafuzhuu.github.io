@@ -34,6 +34,8 @@
             var divCount = divElements.length;
             // 将数量存储在变量中
             window.divCount = divCount;
+            // 更新显示 div 标签数量的元素
+            document.getElementById('divCountDisplay').innerText = window.divCount;
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -60,12 +62,5 @@
     <div>
       <a href="/static/html/因子投资.html">因子选股</a>
     </div>
-
-    <script>
-      // 在页面加载完成后，更新显示 div 标签数量的元素
-      window.onload = function() {
-          document.getElementById('divCountDisplay').innerText = window.divCount;
-      }
-    </script>
   </body>
 </html>
