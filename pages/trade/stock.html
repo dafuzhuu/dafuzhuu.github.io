@@ -28,14 +28,14 @@
     </style>
     <script>
         window.onload = function() {
-            // 获取所有的 div 标签
-            var divElements = document.querySelectorAll('div');
-            // 获取 div 标签的数量
-            var divCount = divElements.length;
+            // 获取所有 id 属性为 "item" 的元素
+            var itemElements = document.querySelectorAll('#item');
+            // 获取 id 为 "item" 的元素的数量
+            var itemCount = itemElements.length;
             // 将数量存储在变量中
-            window.divCount = divCount;
-            // 更新显示 div 标签数量的元素
-            document.getElementById('divCountDisplay').innerText = window.divCount;
+            window.itemCount = itemCount;
+            // 更新显示 id 为 "item" 的元素数量的元素
+            document.getElementById('itemCountDisplay').innerText = window.itemCount;
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -54,12 +54,12 @@
     </section>
     <br>
     <!-- 用于承载 echarts 图表的 div 元素 -->
-    <section id="main"></section>
+    <div id="main"></div>
     <br>
-    <div>
+    <div id="item">
       <a href="/static/html/ETF轮动.html">ETF轮动策略</a>
     </div>
-    <div>
+    <div id="item">
       <a href="/static/html/因子投资.html">因子选股</a>
     </div>
   </body>
