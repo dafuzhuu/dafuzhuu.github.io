@@ -11,6 +11,14 @@ body {
   margin-top: 40px;
   line-height: 2; <!-- 行间距 -->
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+      margin-left: 0; /* 在小屏幕设备上将 margin-left 设置为 0 */
+      margin-right: 0; /* 在小屏幕设备上将 margin-right 设置为 0 */
+    }
+  }
+
 a {
   color: black; /* 默认链接颜色 */
   background-color: white; /* 默认背景颜色 */
