@@ -6,8 +6,8 @@
 body {
   font-size: 18px;
   font-family: "HanSerifSC", serif;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 40px;
   line-height: 2; <!-- 行间距 -->
 }
