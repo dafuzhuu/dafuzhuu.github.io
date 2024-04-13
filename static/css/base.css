@@ -14,8 +14,8 @@ body {
 
 @media only screen and (max-width: 600px) {
   body {
-    margin-left: 0; /* 在小屏幕设备上将 margin-left 设置为 0 */
-    margin-right: 0; /* 在小屏幕设备上将 margin-right 设置为 0 */
+    margin-left: 5%; /* 在小屏幕设备上将 margin-left 设置为 0 */
+    margin-right: 5%; /* 在小屏幕设备上将 margin-right 设置为 0 */
   }
 }
 
