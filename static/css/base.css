@@ -19,6 +19,10 @@ body {
   }
 }
 
+ul {
+    padding-left: 20px;
+}
+
 a {
   color: black; /* 默认链接颜色 */
   background-color: white; /* 默认背景颜色 */
