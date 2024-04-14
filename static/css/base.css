@@ -16,6 +16,7 @@ body {
   body {
     margin-left: 5%; /* 在小屏幕设备上将 margin-left 设置为 0 */
     margin-right: 5%; /* 在小屏幕设备上将 margin-right 设置为 0 */
+    font-size: 16px;
   }
 }
 
