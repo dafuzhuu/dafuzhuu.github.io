@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     series: [
       {
-        name: '因子选股',
+        name: '因子选股1.0',
         type: 'line',
         stack: null,
         data: result_factor
