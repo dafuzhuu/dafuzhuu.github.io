@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
       data: dates
     },
     yAxis: {
-      type: 'value'
+      type: 'value',
+      axisLabel: {formatter: '{value}%'}
     },
     series: [
       {
