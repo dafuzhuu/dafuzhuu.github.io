@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-        text: ''
+        text: '实盘'
     },
     tooltip: {
       trigger: 'axis'
