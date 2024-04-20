@@ -42,7 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
       trigger: 'axis'
     },
     legend: {
-      data: ['因子选股1.0', 'ETF轮动', '上证指数', '景顺沪港深精选']
+      data: ['因子选股1.0', 'ETF轮动', '上证指数', '景顺沪港深精选'],
+      selected: {
+          因子选股1.0: false
+      }
     },
     grid: {
       left: '3%',
