@@ -25,6 +25,9 @@
       #main {
         height: 300px; /* 设置图表容器的高度 */
       }
+      .hidden {
+        display: none;
+      }
     </style>
     <script>
       window.onload = function() {
@@ -39,7 +42,7 @@
       }
 
       function toggleContent() {
-        var content = document.getElementById("myContent");
+        var content = document.getElementById("main");
         if (content.classList.contains("hidden")) {
           content.classList.remove("hidden");
         } else {
