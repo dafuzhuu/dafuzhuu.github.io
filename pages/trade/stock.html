@@ -27,16 +27,25 @@
       }
     </style>
     <script>
-        window.onload = function() {
-            // 获取所有 id 属性为 "item" 的元素
-            var itemElements = document.querySelectorAll('#item');
-            // 获取 id 为 "item" 的元素的数量
-            var itemCount = itemElements.length;
-            // 将数量存储在变量中
-            window.itemCount = itemCount;
-            // 更新显示 id 为 "item" 的元素数量的元素
-            document.getElementById('itemCountDisplay').innerText = window.itemCount;
+      window.onload = function() {
+          // 获取所有 id 属性为 "item" 的元素
+          var itemElements = document.querySelectorAll('#item');
+          // 获取 id 为 "item" 的元素的数量
+          var itemCount = itemElements.length;
+          // 将数量存储在变量中
+          window.itemCount = itemCount;
+          // 更新显示 id 为 "item" 的元素数量的元素
+          document.getElementById('itemCountDisplay').innerText = window.itemCount;
+      }
+
+      function toggleContent() {
+        var content = document.getElementById("myContent");
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+        } else {
+          content.classList.add("hidden");
         }
+      }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
@@ -53,8 +62,9 @@
       <a href="/pages/trade/fixedincome.html">固收</a> 
     </section>
     <br>
+    <button onclick="toggleContent()" class="btn">收益率曲线</button>
     <!-- 用于承载 echarts 图表的 div 元素 -->
-    <div id="main"></div>
+    <div id="main" class="hidden"></div>
     <br>
     <div id="item">
       <a href="/static/html/ETF轮动.html">ETF轮动策略</a>
