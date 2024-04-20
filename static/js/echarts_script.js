@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
       containLabel: true
     },
     xAxis: {
-      boundaryGap: false,
       data: dates
     },
     yAxis: {
