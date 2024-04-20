@@ -25,9 +25,6 @@
       #main {
         height: 300px; /* 设置图表容器的高度 */
       }
-      .hidden {
-        display: none;
-      }
     </style>
     <script>
       window.onload = function() {
@@ -40,15 +37,20 @@
           // 更新显示 id 为 "item" 的元素数量的元素
           document.getElementById('itemCountDisplay').innerText = window.itemCount;
       }
-
-      function toggleContent() {
-        var content = document.getElementById("main");
-        if (content.classList.contains("hidden")) {
-          content.classList.remove("hidden");
+      
+      // 选择下拉按钮和内容元素
+      const dropdownBtn = document.getElementById('dropdown-btn');
+      const dropdownContent = document.getElementById('main');
+    
+      // 监听按钮点击事件
+      dropdownBtn.addEventListener('click', function() {
+        // 切换内容元素的显示状态
+        if (dropdownContent.style.display === 'none') {
+          dropdownContent.style.display = 'block';
         } else {
-          content.classList.add("hidden");
+          dropdownContent.style.display = 'none';
         }
-      }
+      });
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>
@@ -65,9 +67,9 @@
       <a href="/pages/trade/fixedincome.html">固收</a> 
     </section>
     <br>
-    <button onclick="toggleContent()" class="btn">收益率曲线</button>
+    <button id="dropdown-btn" class="btn">收益率曲线</button>
     <!-- 用于承载 echarts 图表的 div 元素 -->
-    <div id="main" class="hidden"></div>
+    <div id="main"></div>
     <br>
     <div id="item">
       <a href="/static/html/ETF轮动.html">ETF轮动策略</a>
