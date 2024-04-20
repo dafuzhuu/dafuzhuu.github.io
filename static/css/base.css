@@ -83,7 +83,30 @@ pre {
   overflow: auto; /* 内容超出时显示滚动条 */
   white-space: pre; /* 保留空格和换行 */
 }
+
 .latex-container {
   display: flex;
   justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #000; /* 黑色边框 */
+  color: #000; /* 黑色文字 */
+  background-color: #fff; /* 白色背景 */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* 按钮悬停样式 */
+.btn:hover {
+  background-color: #000; /* 黑色背景 */
+  color: #fff; /* 白色文字 */
+  border-color: #000; /* 黑色边框 */
 }
