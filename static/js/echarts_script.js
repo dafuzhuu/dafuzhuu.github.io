@@ -49,11 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     dataZoom: [
       {
-          show: true,
-          realtime: true,
-          start: 0,
-          end: 100,
-          xAxisIndex: [0, 1]
+          type: 'slider',
+          xAxisIndex: 0,
+          filterMode: 'none'
+      },
+      {
+          type: 'inside',
+          xAxisIndex: 0,
+          filterMode: 'none'
       }
     ],
     grid: {
