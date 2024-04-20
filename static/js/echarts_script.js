@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
       {
           type: 'slider',
           xAxisIndex: 0,
-          filterMode: 'none'
+          filterMode: 'none',
+          handleSize: 22
       },
       {
           type: 'inside',
