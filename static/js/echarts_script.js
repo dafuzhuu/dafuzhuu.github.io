@@ -47,6 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
           '因子选股1.0': false
       }
     },
+    dataZoom: [
+      {
+          show: true,
+          realtime: true,
+          start: 0,
+          end: 100,
+          xAxisIndex: [0, 1]
+      }
+    ],
     grid: {
       left: '3%',
       right: '4%',
@@ -65,26 +74,26 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: '因子选股1.0',
         type: 'line',
-        stack: null,
-        data: result_factor
+        data: result_factor,
+        smooth: true
       },
       {
         name: 'ETF轮动',
         type: 'line',
-        stack: null,
-        data: result_etf
+        data: result_etf,
+        smooth: true
       },
       {
         name: '上证指数',
         type: 'line',
-        stack: null,
-        data: result_1A0001
+        data: result_1A0001,
+        smooth: true
       },
       {
         name: '景顺沪港深精选',
         type: 'line',
-        stack: null,
-        data: result_000979
+        data: result_000979,
+        smooth: true
       }
     ]
   };
