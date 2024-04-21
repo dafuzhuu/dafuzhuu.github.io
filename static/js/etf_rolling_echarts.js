@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // 配置项
   option = {
     title: {
-        text: '实盘'
+        text: '回测'
     },
     tooltip: {
       trigger: 'axis'
     },
     legend: {
-      data: ['518880', '513100', '159915', '510880', 'signal'],
+      data: ['signal', '518880', '513100', '159915', '510880'],
     },
     dataZoom: [
       {
@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     series: [
       {
+        name: 'signal',
+        type: 'line',
+        data: data_signal
+      },
+      {
         name: '518880',
         type: 'line',
         data: data_518880
@@ -69,11 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '510880',
         type: 'line',
         data: data_510880
-      },
-      {
-        name: 'signal',
-        type: 'line',
-        data: data_signal
       }
     ]
   };
