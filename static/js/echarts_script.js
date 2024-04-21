@@ -78,25 +78,25 @@ document.addEventListener('DOMContentLoaded', function() {
         name: '因子选股1.0',
         type: 'line',
         data: result_factor,
-        smooth: true
+        showSymbol: false
       },
       {
         name: 'ETF轮动',
         type: 'line',
         data: result_etf,
-        smooth: true
+        showSymbol: false
       },
       {
         name: '上证指数',
         type: 'line',
         data: result_1A0001,
-        smooth: true
+        showSymbol: false
       },
       {
         name: '景顺沪港深精选',
         type: 'line',
         data: result_000979,
-        smooth: true
+        showSymbol: false
       }
     ]
   };
