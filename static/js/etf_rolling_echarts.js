@@ -53,26 +53,31 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: 'signal',
         type: 'line',
+        showSymbol: false,
         data: data_signal
       },
       {
         name: '518880',
         type: 'line',
+        showSymbol: false,
         data: data_518880
       },
       {
         name: '513100',
         type: 'line',
+        showSymbol: false,
         data: data_513100
       },
       {
         name: '159915',
         type: 'line',
+        showSymbol: false,
         data: data_159915
       },
       {
         name: '510880',
         type: 'line',
+        showSymbol: false,
         data: data_510880
       }
     ]
