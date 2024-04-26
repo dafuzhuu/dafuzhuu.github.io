@@ -47,19 +47,19 @@ document.addEventListener('DOMContentLoaded', function() {
           '因子选股1.0': false
       }
     },
-    dataZoom: [
-      {
-          type: 'slider',
-          xAxisIndex: 0,
-          filterMode: 'none',
-          handleSize: 22
-      },
-      {
-          type: 'inside',
-          xAxisIndex: 0,
-          filterMode: 'none'
-      }
-    ],
+    // dataZoom: [
+    //   {
+    //       type: 'slider',
+    //       xAxisIndex: 0,
+    //       filterMode: 'none',
+    //       handleSize: 22
+    //   },
+    //   {
+    //       type: 'inside',
+    //       xAxisIndex: 0,
+    //       filterMode: 'none'
+    //   }
+    // ],
     grid: {
       left: '3%',
       right: '4%',
