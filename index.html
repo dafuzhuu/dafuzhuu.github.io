@@ -37,11 +37,25 @@
       <a class="fas fa-calendar" href="/static/pdf/厦门大学 2024-2025学年校历.pdf"></a>
     </section>
 
-    <h2>自学课程</h2>
     <div>
+      <h2>目录</h2>
+      <ol>
+        <li><a href="#self-learn">自学课程</a></li>
+          <ul>
+            <li><a href="#self-learn1">证书</a></li>
+            <li><a href="#self-learn2">无证书</a></li>
+          </ul>
+        <li><a href="#quant">量化/金工</a></li>
+        <li><a href="#blog">博客</a></li>
+        <li><a href="#booklist">书单</a></li>
+      </ol>
+    </div>
+
+    <h2>自学课程</h2>
+    <div id="self-learn">
     	<ul>
     	<!----------------------------------- 证书课程 ----------------------------------------->
-    		<li>证书</li>
+    		<li id="self-learn1">证书</li>
     		  <ol>
     		  	<li><a href="https://learning.edx.org/course/course-v1:KyotoUx+009x+2T2017/progress"><input type="checkbox"/>随机过程edx证书课程：京都大学</a></li>
     		  	<li><a href="https://learning.edx.org/course/course-v1:UTAustinX+UT.ALA+1T2022/home"><input type="checkbox"/>Advanced Linear Algebra</a></li>
@@ -94,7 +108,7 @@
     		  
     		  
     		<!----------------------------------- 无证书课程 --------------------------------------->
-    		<li>无证书</li>
+    		<li id="self-learn2">无证书</li>
     		  <ol>
     		  	<li><a href="https://probability.xmu.edu.cn/"><input type="checkbox"/>洪永淼：概率论与统计学</a></li>
             <li><a href="https://hrl.boyuai.com/chapter/intro"><input type="checkbox"/>动手学强化学习</a></li>
@@ -133,7 +147,7 @@
     </div>
     
     <h2>量化/金工</h2>
-    <div>
+    <div id="quant">
     	<ul>
     		<!----------------------------------- 研报 ----------------------------------------->
     		<li>研报</li>
@@ -157,7 +171,7 @@
     <div id="main"></div>
     
     <h2>博客</h2>
-    <div>
+    <div id="blog">
     	<ul>
     		<li><a href="/static/html/4.15，4.16两日跌停有感.html">4.15，4.16两日跌停有感</a></li>
     		<li><a href="/blogs/有时要坚定地立下目标.html">有时要坚定地立下目标</a></li>
@@ -168,7 +182,7 @@
     </div>
     
     <h2>书单</h2>
-    <div>
+    <div id="booklist">
     	<ol>
         <li><input type="checkbox">黄金：权力与财富的世界简史</li>
         <li><input type="checkbox">深度学习革命</li>
