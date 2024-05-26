@@ -114,12 +114,9 @@ pre {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #000;
-    color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 10px;
+    border-radius: 3px;
     cursor: pointer;
     display: none; /* 初始隐藏 */
-    font-size: 14px;
 }
