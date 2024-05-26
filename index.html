@@ -1,13 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <link rel="stylesheet" href="/static/css/base.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://zzzzdf.page/pages">
-    <title>Redirecting...</title>
-</head>
-<body>
-    <p>If you are not redirected automatically, follow this <a href="https://zzzzdf.page/pages">link</a>.</p>
-</body>
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <title>Quant Notes</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+    <!-- google search console - html标记 -->
+    <meta name="google-site-verification" content="SxN5ce0XMy3kwp6icHO25e2DmU9qRXQ-9tBCjyh-KfE" />
+
+    <!-- Mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!--  响应式设计 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- 引入 echarts 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+    
+    <!-- 引入 JavaScript 文件 -->
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/config.js"></script>
+    <script src="/static/js/echarts_script.js"></script>
+    
+    <!-- echarts图标容器 -->
+    <style>
+      #main {
+        height: 300px; /* 设置图表容器的高度 */
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <a class="fab fa-github" href="https://github.com/ultimate233/ultimate233.github.io"></a>
+      <a class="fas fa-calendar" href="/static/pdf/厦门大学 2024-2025学年校历.pdf"></a>
+    </section>
+
+    <h2>自学课程</h2>
+    <div>
+    	<ul>
+    	<!----------------------------------- 证书课程 ----------------------------------------->
+    		<li>证书</li>
+    		  <ol>
+    		  	<li><a href="https://learning.edx.org/course/course-v1:KyotoUx+009x+2T2017/progress"><input type="checkbox"/>随机过程edx证书课程：京都大学</a></li>
+    		  	<li><a href="https://learning.edx.org/course/course-v1:UTAustinX+UT.ALA+1T2022/home"><input type="checkbox"/>Advanced Linear Algebra</a></li>
+    		  	<li><a href="https://www.coursera.org/learn/interest-rate-models"><input type="checkbox"/>Interest Rate Models</a></li>
+            <li><a href="https://www.coursera.org/specializations/data-science-python" ><input type="checkbox"/>Applied Data Science with Python</a></li>
+            <li><a href="https://www.coursera.org/specializations/cs-fundamentals" ><input type="checkbox"/>Accelerated Computer Science Fundamentals</a></li>
+            <li><a href="https://www.coursera.org/learn/introduction-git-github" ><input type="checkbox"/>Introduction to Git and GitHub</a></li>
+            <li><a href="https://www.coursera.org/specializations/data-mining" ><input type="checkbox"/>Data mining</a></li>
+            <li><a href="https://www.coursera.org/specializations/data-structures-algorithms" ><input type="checkbox"/>Data Structures and Algorithms</a></li>
+            <li><a href="https://www.coursera.org/specializations/mathematics-engineers" ><input type="checkbox"/>Mathematics for Engineers</a></li>
+            <li><a href="https://www.coursera.org/learn/complex-analysis" ><input type="checkbox"/>Introduction to Complex Analysis</a></li>
+            <li><a href="https://www.coursera.org/learn/mcmc-bayesian-statistics" ><input type="checkbox"/>Bayesian Statistics</a></li>
+            <li><a href="https://www.coursera.org/specializations/probabilistic-graphical-models" ><input type="checkbox"/>Probabilistic Graphical Models</a></li>
+            <li><a href="https://www.coursera.org/learn/discrete-optimization" ><input type="checkbox"/>Discrete Optimization</a></li>
+            <li><a href="https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-vr-nlp" ><input type="checkbox"/>Machine Learning, Visual Recognition and NLP</a></li>
+            <li><a href="https://www.coursera.org/specializations/reinforcement-learning" ><input type="checkbox"/>Reinforcement Learning</a></li>
+            <li><a href="https://www.coursera.org/learn/deep-neural-networks-with-pytorch" ><input type="checkbox"/>Deep Neural Networks with PyTorch</a></li>
+            <li><a href="https://www.coursera.org/learn/pricing-options-with-mathematical-models" ><input type="checkbox"/>Pricing Options with Mathematical Models</a></li>
+            <li><a href="https://www.coursera.org/learn/wharton-quantitative-modeling" ><input type="checkbox"/>Fundamentals of Quantitative Modeling</a></li>
+            <li><a href="https://www.coursera.org/specializations/financialengineering" ><input type="checkbox"/>Financial Engineering and Risk Management</a></li>
+            <li><a href="https://www.coursera.org/learn/study-in-usa" ><input type="checkbox"/>Applying to U.S. Universities</a></li>
+            <li><a href="https://www.coursera.org/learn/narrative-economics" ><input type="checkbox"/>Narrative Economics</a></li>
+            <li><a href="https://www.coursera.org/projects/googlecloud-reinforcement-learning-qwik-start-yqsij" ><input type="checkbox"/>Reinforcement Learning: Qwik Start</a></li>
+            <li><a href="https://www.coursera.org/learn/analytic-combinatorics"><input type="checkbox"/>Analytic Combinatorics</a></li>
+            <li><a href="https://www.coursera.org/projects/text-generation-markov-chains-python"><input type="checkbox"/>Text Generation with Markov Chains in Python</a></li>
+            <li><a href="https://www.coursera.org/learn/social-economic-networks"><input type="checkbox"/>Social and Economic Networks</a></li>
+            <li><a href="https://www.coursera.org/learn/finite-element-method"><input type="checkbox"/>The Finite Element Method for Problems in Physics</a></li>
+            <li><a href="https://www.coursera.org/learn/operations-research-modeling"><input type="checkbox"/>Operations Research (1): Models and Applications</a></li>
+            <li><a href="https://www.coursera.org/learn/operations-research-algorithms"><input type="checkbox"/>Operations Research (2): Optimization Algorithms</a></li>
+            <li><a href="https://www.coursera.org/learn/operations-research-theory"><input type="checkbox"/>Operations Research (3): Theory</a></li>
+            <li><a href="https://www.coursera.org/learn/advanced-algorithms-and-complexity"><input type="checkbox"/>Advanced Algorithms and Complexity</a></li>
+            <li><a href="https://www.coursera.org/specializations/biancheng-suanfa"><input type="checkbox"/>程序设计与算法 Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/analytics-for-decision-making"><input type="checkbox"/>Analytics for Decision Making Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/analytics"><input type="checkbox"/>Business Analytics Specialization</a></li>
+            <li><a href="https://www.coursera.org/learn/analytic-combinatorics"><input type="checkbox"/>Analytic Combinatorics</a></li>
+            <li><a href="https://www.coursera.org/specializations/reinforcement-learning"><input type="checkbox"/>Reinforcement Learning Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/gis"><input type="checkbox"/>Geographic Information Systems (GIS) Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/matlab-programming-engineers-scientists"><input type="checkbox"/>MATLAB Programming for Engineers and Scientists Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/six-sigma-green-belt"><input type="checkbox"/>Six Sigma Green Belt Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/recommender-systems"><input type="checkbox"/>Recommender Systems Specialization</a></li>
+            <li><a href="https://www.coursera.org/learn/illinois-tech-statistical-learning"><input type="checkbox"/>Statistical Learning</a></li>
+            <li><a href="https://www.coursera.org/learn/fintech"><input type="checkbox"/>FinTech Foundations and Overview</a></li>
+            <li><a href="https://www.coursera.org/specializations/digital-signal-processing"><input type="checkbox"/>Digital Signal Processing Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/discrete-mathematics"><input type="checkbox"/>Introduction to Discrete Mathematics for Computer Science Specialization</a></li>
+            <li><a href="https://coursera.org/specializations/algorithms"><input type="checkbox"/>Algorithms Specialization</a></li>
+            <li><a href="https://www.coursera.org/specializations/discrete-mathematics"><input type="checkbox"/>Introduction to Discrete Mathematics for Computer Science Specialization</a></li>
+            <li><a href="https://www.coursera.org/learn/graphs"><input type="checkbox"/>Introduction to Graph Theory</a></li>
+            <li><a href="https://www.coursera.org/learn/number-theory-cryptography"><input type="checkbox"/>Number Theory and Cryptography</a></li>
+    		  </ol>
+    		  
+    		  
+    		<!----------------------------------- 无证书课程 --------------------------------------->
+    		<li>无证书</li>
+    		  <ol>
+    		  	<li><a href="https://probability.xmu.edu.cn/"><input type="checkbox"/>洪永淼：概率论与统计学</a></li>
+            <li><a href="https://hrl.boyuai.com/chapter/intro"><input type="checkbox"/>动手学强化学习</a></li>
+            <li><a href="http://introtodeeplearning.com/" ><input type="checkbox"/>MIT深度学习</a></li>
+            <li><a href="https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/" ><input type="checkbox"/>Gil的矩阵论</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1Pg4y187Ed/?spm_id_from=333.337.search-card.all.click" ><input type="checkbox"/>Stanford的最优化</a></li>
+            <li><a href="https://www.devtaoism.com/" ><input type="checkbox"/>Manim</a></li>
+            <li><a href="https://computationalthinking.mit.edu/Spring21/" ><input type="checkbox"/>Julia编程</a></li>
+            <li><a href="https://www.hello-algo.com/" ><input type="checkbox"/>hello算法</a></li>
+            <li><a href="https://www.theforage.com/simulations/jpmorgan/quantitative-research-11oc" ><input type="checkbox"/>JPMorgan量化项目</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1pw411Z7Ds?p=1" ><input type="checkbox"/>测度论与概率论</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1GY4y1V7P8?p=1" ><input type="checkbox"/>实变函数：陈闯（川大）</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1wj411k7Tj"><input type="checkbox"/>随机过程：张颢（清华）</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1C7411Z7xh?p=1" ><input type="checkbox"/>抽象代数</a></li>
+            <li><a href="https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/" ><input type="checkbox"/>泛函分析</a></li>
+            <li><a href="https://wangzhe3224.github.io/zhuan-ma/core/core/" ><input type="checkbox"/>转码路线图</a></li>
+            <li><a href="https://www.joinquant.com/view/community/detail/8ec7aaaa899cf928550f89a104637f22" ><input type="checkbox"/>快速入门量化</a></li>
+            <li><a href="https://web.stanford.edu/class/cs106a/" ><input type="checkbox"/>CS106A: Programming Methodology</a></li>
+            <li><a href="https://web.stanford.edu/class/cs111/" ><input type="checkbox"/>CS111: Operating Systems Principles</a></li>
+            <li><a href="https://www.deeplearningbook.org/" ><input type="checkbox"/>Deep Learning Book</a></li>
+            <li><a href="https://www.icourses.cn/web/sword/portal/shareDetails?cId=6080#/course/chapter"><input type="checkbox"/>郑振龙：金融工程</a></li>
+            <li><a href="https://www.bilibili.com/video/BV12o4y197US"><input type="checkbox"/>王树森：深度强化学习</a></li>
+            <li><a href="https://www.youtube.com/watch?v=vT1JzLTH4G4"><input type="checkbox"/>CS231n：CV</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rOSH4v6133s9LFPRHjEmbmJ"><input type="checkbox"/>CS224n：NLP</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1P3411u7c1/"><input type="checkbox"/>邱锡鹏：神经网络与深度学习</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1Sx421f7Dj"><input type="checkbox"/>MIT矩阵微积分</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1614y1D7Sh"><input type="checkbox"/>MIT6.824分布式系统（好像挺有意思）</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1gA411T7ar/"><input type="checkbox"/>复变函数：国立清华</a></li>
+            <li><a href="https://thepythonscrapyplaybook.com/" ><input type="checkbox" checked/>Python爬虫</a></li>
+            <li><a href="https://ocw.mit.edu/courses/6-057-introduction-to-matlab-january-iap-2019/pages/lecture-notes/" ><input type="checkbox" checked/>Matlab入门</a></li>
+            <li><a href="https://zh.d2l.ai/"><input type="checkbox"/>动手学深度学习</a></li>
+            <li><a href="https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/"><input type="checkbox"/>Topics In Mathematics With Applications In Finance</a></li>
+            <li><a href="https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/"><input type="checkbox"/>Advanced Stochastic Processes</a></li>
+    		  </ol>
+    	</ul>
+    </div>
+    
+    <h2>量化/金工</h2>
+    <div>
+    	<ul>
+    		<!----------------------------------- 研报 ----------------------------------------->
+    		<li>研报</li>
+    			<ul>
+    				<li><a href="/blogs/htsc-ai.html">华泰人工智能系列</a></li>
+    				<li><a href="/blogs/dfzq-factors.html">东方证券因子系列</a></li>
+    				<li><a href="/blogs/dfzq-derivatives.html">东证衍生品系列</a></li>
+    				<li><a href="/blogs/dfzq-fixedincome.html">东证固收量化系列</a></li>
+    				<li><a href="/blogs/sector-rotation.html">行业轮动</a></li>
+    			</ul>
+    		<!----------------------------------- 策略 ----------------------------------------->
+    		<li>策略</li>
+    			<ul>
+    				<li><a href="/static/html/因子投资.html">基础版因子选股</a></li>
+    				<li><a href="/static/html/20240411 商品期货套利 AZDF001001 V 1.0.0.html">商品期货套利</a></li>
+    				<li><a href="/static/html/ETF动量轮动.html">ETF动量轮动</a></li>
+    				<li><a href="/static/html/ETF轮动2.0.html">ETF轮动2.0</a></li>
+    			</ul>
+    	</ul>
+    </div>
+    <div id="main"></div>
+    
+    <h2>博客</h2>
+    <div>
+    	<ul>
+    		<li><a href="/static/html/4.15，4.16两日跌停有感.html">4.15，4.16两日跌停有感</a></li>
+    		<li><a href="/blogs/有时要坚定地立下目标.html">有时要坚定地立下目标</a></li>
+    		<li><a href="/blogs/demo.html">手搓一个简单博客</a></li>
+    		<li><a href="/blogs/xk_scrape.html">Selenium爬厦大选课网站</a></li>
+    		<li><a href="/static/html/GRE3000.html">GRE3000单词提取</a></li>
+    	</ul>
+    </div>
+    
+    <h2>书单</h2>
+    <div>
+    	<ol>
+        <li><input type="checkbox">黄金：权力与财富的世界简史</li>
+        <li><input type="checkbox">深度学习革命</li>
+        <li><input type="checkbox">硅谷钢铁侠</li>
+        <li><input type="checkbox">穷查理宝典</li>
+        <li><input type="checkbox">浪潮之巅</li>
+        <li><input type="checkbox">投资最重要的事</li>
+        <li><input type="checkbox">灰度思考</li>
+        <li><input type="checkbox">伟大的博弈</li>
+        <li><input type="checkbox">聪明的投资者</li>
+        <li><input type="checkbox">反脆弱</li>
+        <li><input type="checkbox">事实</li>
+      </ol>
+    </div>
+  </body>
 </html>
