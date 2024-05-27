@@ -123,43 +123,32 @@ pre {
     color: #fff;
 }
 
+.message {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
 .info {
-    display: inline-block;
-    padding: 5px 10px;
     background-color: #e7f3fe;
     border: 1px solid #b3d7ff;
-    border-radius: 5px;
     color: #31708f;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
 }
 .warning {
-    display: inline-block;
-    padding: 5px 10px;
     background-color: #fcf8e3;
     border: 1px solid #faebcc;
-    border-radius: 5px;
     color: #8a6d3b;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
 }
 .safe {
-    display: inline-block;
-    padding: 5px 10px;
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
-    border-radius: 5px;
     color: #3c763d;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
 }
 .caution {
-    display: inline-block;
-    padding: 5px 10px;
     background-color: #f2dede;
     border: 1px solid #ebccd1;
-    border-radius: 5px;
     color: #a94442;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
 }
