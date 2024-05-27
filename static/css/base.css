@@ -125,9 +125,9 @@ pre {
 
 .message {
     display: block;
-    width: 80%;
-    margin: 5px auto;
-    padding: 5px;
+    width: 60%;
+    margin: 2px auto;
+    padding: 10px;
     border-radius: 5px;
     font-weight: bold;
     text-align: left;
