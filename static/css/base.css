@@ -126,11 +126,11 @@ pre {
 .message {
     display: block;
     width: 80%;
-    margin: 10px auto;
-    padding: 10px;
+    margin: 5px auto;
+    padding: 5px;
     border-radius: 5px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 .info {
     background-color: #e7f3fe;
