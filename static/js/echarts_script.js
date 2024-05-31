@@ -51,19 +51,19 @@ document.addEventListener('DOMContentLoaded', function() {
           '景顺沪港深精选': false
       }
     },
-    // dataZoom: [
-    //   {
-    //       type: 'slider',
-    //       xAxisIndex: 0,
-    //       filterMode: 'none',
-    //       handleSize: 22
-    //   },
-    //   {
-    //       type: 'inside',
-    //       xAxisIndex: 0,
-    //       filterMode: 'none'
-    //   }
-    // ],
+    dataZoom: [
+      {
+          type: 'slider',
+          xAxisIndex: 0,
+          filterMode: 'none',
+          handleSize: 22
+      },
+      {
+          type: 'inside',
+          xAxisIndex: 0,
+          filterMode: 'none'
+      }
+    ],
     grid: {
       left: '3%',
       right: '4%',
@@ -107,6 +107,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 设置配置项并渲染图表
   option && myChart.setOption(option);
+});
+
+
+// 监听 dataZoom 事件
+myChart.on('dataZoom', function (params) {
+    // 获取当前的 dataZoom 范围
+    var start = params.batch[0].startValue;
+    var end = params.batch[0].endValue;
+
+    // 计算当前可见区域的数据
+    var visibleData = data.slice(start, end + 1);
+
+    // 计算相对第一个数据点的值
+    var firstValue = visibleData[0];
+    var newData = data.map(function (value, index) {
+        if (index >= start && index <= end) {
+            return value / firstValue;
+        } else {
+            return value;
+        }
+    });
+
+    // 更新图表数据
+    myChart.setOption({
+        series: [{
+            data: newData
+        }]
+    });
 });
 
 
