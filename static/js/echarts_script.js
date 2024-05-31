@@ -23,22 +23,10 @@ function accumulate(inputArray) {
     return resultArray;
 }
 
-// 相对起始点的变化百分比函数
-function relativeToStart(inputArray) {
-    let firstValue = inputArray[0];
-    return inputArray.map(value => ((value / firstValue - 1) * 100).toFixed(2));
-}
-
-
 let result_factor = accumulate(data_factor);
 let result_etf_1 = accumulate(data_etf_1);
 let result_1A0001 = accumulate(data_1A0001);
 let result_000979 = accumulate(data_000979);
-
-let result_factor = relativeToStart(accumulated_factor);
-let result_etf_1 = relativeToStart(accumulated_etf_1);
-let result_1A0001 = relativeToStart(accumulated_1A0001);
-let result_000979 = relativeToStart(accumulated_000979);
 
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
