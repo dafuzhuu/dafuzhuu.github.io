@@ -107,35 +107,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 设置配置项并渲染图表
   option && myChart.setOption(option);
-});
 
-
-// 监听 dataZoom 事件
-myChart.on('dataZoom', function (params) {
+  // 监听 dataZoom 事件
+  myChart.on('dataZoom', function (params) {
     // 获取当前的 dataZoom 范围
     var start = params.batch[0].startValue;
     var end = params.batch[0].endValue;
 
-    // 计算当前可见区域的数据
-    var visibleData = data.slice(start, end + 1);
+    // 定义一个函数用来更新数据
+    function updateData(originalData, start, end) {
+        let visibleData = originalData.slice(start, end + 1);
+        let firstValue = visibleData[0];
+        return originalData.map(function (value, index) {
+            if (index >= start && index <= end) {
+                return ((value / firstValue - 1) * 100).toFixed(2);
+            } else {
+                return ((value / firstValue - 1) * 100).toFixed(2); // 或者保持原始值不变
+            }
+        });
+    }
 
-    // 计算相对第一个数据点的值
-    var firstValue = visibleData[0];
-    var newData = data.map(function (value, index) {
-        if (index >= start && index <= end) {
-            return value / firstValue;
-        } else {
-            return value;
-        }
-    });
+    // 更新每个系列的数据
+    let updated_factor = updateData(result_factor, start, end);
+    let updated_etf_1 = updateData(result_etf_1, start, end);
+    let updated_1A0001 = updateData(result_1A0001, start, end);
+    let updated_000979 = updateData(result_000979, start, end);
 
-    // 更新图表数据
+    // 设置新的数据
     myChart.setOption({
-        series: [{
-            data: newData
-        }]
+        series: [
+            { data: updated_factor },
+            { data: updated_etf_1 },
+            { data: updated_1A0001 },
+            { data: updated_000979 }
+        ]
     });
+  });
 });
+
 
 
 // 定制主题
