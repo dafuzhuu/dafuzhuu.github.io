@@ -23,10 +23,22 @@ function accumulate(inputArray) {
     return resultArray;
 }
 
+// 相对起始点的变化百分比函数
+function relativeToStart(inputArray) {
+    let firstValue = inputArray[0];
+    return inputArray.map(value => ((value / firstValue - 1) * 100).toFixed(2));
+}
+
+
 let result_factor = accumulate(data_factor);
 let result_etf_1 = accumulate(data_etf_1);
 let result_1A0001 = accumulate(data_1A0001);
 let result_000979 = accumulate(data_000979);
+
+let result_factor = relativeToStart(accumulated_factor);
+let result_etf_1 = relativeToStart(accumulated_etf_1);
+let result_1A0001 = relativeToStart(accumulated_1A0001);
+let result_000979 = relativeToStart(accumulated_000979);
 
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
@@ -107,42 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 设置配置项并渲染图表
   option && myChart.setOption(option);
-
-  // 监听 dataZoom 事件
-  myChart.on('dataZoom', function (params) {
-    // 获取当前的 dataZoom 范围
-    var start = params.batch[0].startValue;
-    var end = params.batch[0].endValue;
-
-    // 定义一个函数用来更新数据
-    function updateData(originalData, start, end) {
-        let visibleData = originalData.slice(start, end + 1);
-        let firstValue = visibleData[0];
-        return originalData.map(function (value, index) {
-            if (index >= start && index <= end) {
-                return ((value / firstValue - 1) * 100).toFixed(2);
-            } else {
-                return ((value / firstValue - 1) * 100).toFixed(2); // 或者保持原始值不变
-            }
-        });
-    }
-
-    // 更新每个系列的数据
-    let updated_factor = updateData(result_factor, start, end);
-    let updated_etf_1 = updateData(result_etf_1, start, end);
-    let updated_1A0001 = updateData(result_1A0001, start, end);
-    let updated_000979 = updateData(result_000979, start, end);
-
-    // 设置新的数据
-    myChart.setOption({
-        series: [
-            { data: updated_factor },
-            { data: updated_etf_1 },
-            { data: updated_1A0001 },
-            { data: updated_000979 }
-        ]
-    });
-  });
 });
 
 
