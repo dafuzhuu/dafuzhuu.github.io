@@ -20,9 +20,9 @@ body {
   }
 }
 
-/* ul {
-    padding-left: 10px;
-} */
+ul {
+    padding-left: 20px;
+}
 
 a {
   color: black; /* 默认链接颜色 */
