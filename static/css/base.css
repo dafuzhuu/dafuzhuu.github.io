@@ -27,7 +27,7 @@ ul {
 a {
   color: black; /* 默认链接颜色 */
   background-color: white; /* 默认背景颜色 */
-/*   padding: 1px 1px; /* 设置链接的内边距 */ */
+  padding: 1px 1px; /* 设置链接的内边距 */
   text-decoration: none; /* 去除下划线 */
   transition: color 0.2s, background-color 0.2s; /* 设置颜色和背景色变换动画 */
   border-radius: 1px; /* 添加圆角 */
