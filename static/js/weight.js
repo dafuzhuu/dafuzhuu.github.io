@@ -40,4 +40,4 @@ option = {
 };
 
 option && myChart.setOption(option);
-)};
+});
