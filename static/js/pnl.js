@@ -31,7 +31,7 @@ let result_000979 = accumulate(data_000979);
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
   // 获取图表容器
-  var chartDom = document.getElementById('main');
+  var chartDom = document.getElementById('pnl');
   // 初始化 echarts 实例
   var myChart = echarts.init(chartDom, 'customed');
   var option;
