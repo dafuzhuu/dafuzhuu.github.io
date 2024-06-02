@@ -28,7 +28,10 @@ option = {
   },
   yAxis: {
     type: 'value',
-    min: 70
+    min: 70,
+    axisLabel: {
+      formatter: '{value} kg'
+    }
   },
   series: [
     {
