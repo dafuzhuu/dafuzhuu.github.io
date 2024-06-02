@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 var chartDom = document.getElementById('weight');
 var myChart = echarts.init(chartDom);
 var option;
@@ -39,3 +40,4 @@ option = {
 };
 
 option && myChart.setOption(option);
+)};
