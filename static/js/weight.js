@@ -24,7 +24,7 @@ option = {
   xAxis: {
     type: 'category',
     boundaryGap: false,
-    data: ['2024.5.5', '5.15', '5.24', '6.2']
+    data: ['2024.5.5', '5.15', '5.24', '6.2', '6.3']
   },
   yAxis: {
     type: 'value',
@@ -36,7 +36,7 @@ option = {
   series: [
     {
       type: 'line',
-      data: [81.03, 79.81, 78.11, 79.37],
+      data: [81.03, 79.81, 78.11, 79.37, 79.16],
       smooth: true
     }
   ]
