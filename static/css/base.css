@@ -29,14 +29,15 @@ a {
   background-color: white; /* 默认背景颜色 */
   padding: 1px 1px; /* 设置链接的内边距 */
   text-decoration: none; /* 去除下划线 */
-  transition: color 0.2s, background-color 0.2s; /* 设置颜色和背景色变换动画 */
+  transition: text-decoration 0.2s; /* 设置下划线变换动画 */
   border-radius: 3px; /* 添加圆角 */
 }
 
 a:hover {
-  color: white; /* 悬停时字体颜色变白 */
-  background-color: black; /* 悬停时背景颜色变黑 */
+  text-decoration: underline; /* 悬停时添加下划线 */
 }
+
+
 .center {
   text-align: center;
 }
