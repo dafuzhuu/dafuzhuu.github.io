@@ -2,10 +2,10 @@
 
 // 数据
 const name = ['ETF动量', '上证指数', '景顺沪港深精选'];
-const dates = ['2024-05-21', '2024-05-22', '2024-05-23', '2024-05-24', '2024-05-27', '2024-05-28', '2024-05-29', '2024-05-30', '2024-05-31', '2024-06-03', '2024-06-04', '2024-06-05', '2024-06-06'];
-const data_etf_1 = [-0.22, -0.03, 0.24, -0.02, -0.84, 0.95, -0.31, -0.56, -0.92, 0.05, -0.72, 0.23, 0.04, 1.00];  // 我的
-const data_1A0001 = [0.54, -0.42, 0.02, -1.33, -0.88, 1.14, -0.46, 0.05, -0.62, -0.16, -0.27, 0.41, -0.83, -0.54];  // 上证
-const data_000979 = [1.12, -1.45, -0.74, -0.92, 0.09, 1.54, -0.17, 0.35, -1.30, -0.39, 0.35, 0.53, -1.00, 1.06];  // 景顺
+const dates = ['2024-06-06', '2024-06-05', '2024-06-04', '2024-06-03', '2024-05-31', '2024-05-30', '2024-05-29', '2024-05-28', '2024-05-27', '2024-05-24', '2024-05-23', '2024-05-22', '2024-05-21'];
+const data_etf_1 = [1.00, 0.04, 0.23, -0.72, 0.05, -0.92, -0.56, -0.31, 0.95, -0.84, -0.02, 0.24, -0.03, -0.22];  // 我的
+const data_1A0001 = [-0.54, -0.83, 0.41, -0.27, -0.16, -0.62, 0.05, -0.46, 1.14, -0.88, -1.33, 0.02, -0.42, 0.54];  // 上证
+const data_000979 = [1.06, -1.00, 0.53, 0.35, -0.39, -1.30, 0.35, -0.17, 1.54, 0.09, -0.92, -0.74, -1.45, 1.12];  // 景顺
 
 // 累乘函数
 function accumulate(inputArray) {
@@ -22,9 +22,9 @@ function accumulate(inputArray) {
     return resultArray;
 }
 
-let result_etf_1 = accumulate(data_etf_1);
-let result_1A0001 = accumulate(data_1A0001);
-let result_000979 = accumulate(data_000979);
+let result_etf_1 = accumulate(data_etf_1.slice().reverse());
+let result_1A0001 = accumulate(data_1A0001.slice().reverse());
+let result_000979 = accumulate(data_000979.slice().reverse());
 
 // 在页面加载完成后执行以下代码
 document.addEventListener('DOMContentLoaded', function() {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
       containLabel: true
     },
     xAxis: {
-      data: dates
+      data: dates.slice().reverse()
     },
     yAxis: {
       type: 'value',
