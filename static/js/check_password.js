@@ -1,7 +1,7 @@
 // 检查密码函数
 function checkPassword() {
     const password = document.getElementById('password').value;
-    const correctPassword = 'zhudafu'; // 替换为实际密码
+    const correctPassword = 'dafuzhuu'; // 替换为实际密码
 
     if (password === correctPassword) {
         document.getElementById('login-form').style.display = 'none';
