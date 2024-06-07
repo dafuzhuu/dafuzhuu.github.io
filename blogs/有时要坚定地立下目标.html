@@ -2,6 +2,7 @@
 <html style='font-size:14px !important'>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<link rel="stylesheet" href="/static/css/security.css">
 <link rel="icon" href="/static/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
 <style>
@@ -701,7 +702,17 @@ li > *:last-child {
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style><title>有时要坚定地立下目标</title>
 </head>
-<body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h2 id='有时要坚定地立下目标'><span>有时要坚定地立下目标</span></h2><p><span>不能连定目标的勇气也没有，不能模凌两可觉得这个也行那个也行，要拿出当年“老子要上深中”的气势，想想曼巴精神、想想初中是怎么杀红眼的；而且目标不是逗猫棒，不是为了求其上取其中，目标就是去实现的啊。虽然舞台从深圳到了整个世界，也要有舍我其谁的霸气，这不是阿Q，不是自我安慰，</span><strong><span>因为你真的很不错！</span></strong></p><p><img src="/static/img/blogs/截屏2024-05-06 上午12.08.59.png" referrerpolicy="no-referrer" alt="截屏2024-05-06 上午12.08.59"></p><p>&nbsp;</p></div></div>
+<body class='typora-export'>
+<div class="login-form" id="login-form">
+    <h2>Enter Password to Access Blog</h2>
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error-message" style="color: red;"></p>
+</div>
+<div class="protected-content" id="protected-content">
+<div class='typora-export-content'><div id='write'  class=''><h2 id='有时要坚定地立下目标'><span>有时要坚定地立下目标</span></h2><p><span>不能连定目标的勇气也没有，不能模凌两可觉得这个也行那个也行，要拿出当年“老子要上深中”的气势，想想曼巴精神、想想初中是怎么杀红眼的；而且目标不是逗猫棒，不是为了求其上取其中，目标就是去实现的啊。虽然舞台从深圳到了整个世界，也要有舍我其谁的霸气，这不是阿Q，不是自我安慰，</span><strong><span>因为你真的很不错！</span></strong></p><p><img src="/static/img/blogs/截屏2024-05-06 上午12.08.59.png" referrerpolicy="no-referrer" alt="截屏2024-05-06 上午12.08.59"></p><p>&nbsp;</p></div></div>
+</div>
+
+<script src="/static/js/check_password.js"></script>
 </body>
 </html>
