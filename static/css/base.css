@@ -50,7 +50,7 @@ a::after {
   z-index: -1; /* 使伪元素在文本后面 */
 }
 a:hover::after {
-  height: 30%;
+  height: 35%;
 }
 span {
   display: inline-block;
