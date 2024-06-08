@@ -34,7 +34,7 @@ a::before {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0px;
   width: 100%;
   border-bottom: 3px solid rgba(200, 200, 200, 0.5); /* 下划线效果，稍微粗一点 */
 }
@@ -42,7 +42,7 @@ a::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 2px; /* 调整位置避免覆盖下划线 */
+  bottom: 3px; /* 调整位置避免覆盖下划线 */
   width: 100%;
   height: 0;
   background-color: rgba(200, 200, 200, 0.5); /* 灰色荧光笔效果 */
