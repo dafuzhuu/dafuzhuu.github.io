@@ -28,6 +28,7 @@ a {
   position: relative;
   text-decoration: none;
   color: #000;
+  display: inline-block; /* 保持链接为内联块元素 */
 }
 a::before {
   content: '';
@@ -50,6 +51,14 @@ a::after {
 }
 a:hover::after {
   height: 50%;
+}
+span {
+  display: inline-block;
+  margin-right: 20px; /* 调整间距以避免图标重叠 */
+}
+/* 去掉最后一个 span 的 margin-right */
+span:last-child {
+  margin-right: 0;
 }
 
 
