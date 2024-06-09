@@ -44,10 +44,10 @@
   <body>
     <!-- 输入密码界面 -->
     <div class="login-form" id="login-form">
-        <h2>Enter Password to Access Blog</h2>
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red;"></p>
+      <h2>Enter Password to Access Blog</h2>
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="checkPassword()">Submit</button>
+      <p id="error-message" style="color: red;"></p>
     </div>
     
     <!-- 加密内容 -->
