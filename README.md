@@ -52,7 +52,7 @@
     
     <!-- 加密内容 -->
     <div class="protected-content" id="protected-content">
-    		<p>加密内容</p>
+<p>加密内容</p>
     </div>
     
     
