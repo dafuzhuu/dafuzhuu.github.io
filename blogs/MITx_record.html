@@ -23,13 +23,35 @@
       <li>Capstone Exam : 2025 TBD</li>
     </ul>
     <h2 id="6.419x">Data Analysis - 6.419x</h2>
-    <ul>
+    <ol>
       <li>Review</li>
       <ul>
-        <li>Hypothesis testing(p-value, power, type I & II error, Fisher exact test, t-test, confidence interval)</li>
-        <li>Likelihood ratio test(<span>\(L(x)\)</span>, Neyman-Pearson lemma, asymptotic <span>\(\Lambda=-2\log(L(x))\)</span>, Wilks theorem)</li>
+        <li>Hypothesis testing (p-value, power, type I & II error, Fisher exact test, t-test, confidence interval)</li>
+        <li>Likelihood ratio test (<span>\(L(x)\)</span>, Neyman-Pearson lemma, asymptotic <span>\(\Lambda=-2\log(L(x))\)</span>, Wilks theorem)</li>
+        <li>Multiple testing</li>
+        <ul>
+          <li>family-wise error rate[\(FWER=P(V\geqslant 1)\)], at least 1 false rejection</li>
+          <li>false discovery rate</li>
+          \[
+          FDR=\mathbb{E}\bigg [\frac{V}{N_1}\bigg ]
+          \]
+            <p>
+              Recall \(N_1\) is the total number of discoveries made (the total number of null hypotheses rejected), and \(V\) is the number of false discoveries (the number of null hypotheses that were falsely rejected).
+            </p>
+          <li>Bonferroni correction</li>
+              \[
+                p^i<\frac{\alpha}{m}
+              \]
+          <li>Holm-Bonferroni</li>
+              \[
+                p^i<\frac{\alpha}{m-(i-1)}
+              \]
+          <li>Benjamini-Hochber</li>
+          <p>Reject \(H_0\) when</p>
+          \[mp^i\leqslant \alpha\]
+        </ul>
       </ul>
-    </ul>
+    </ol>
     <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
     <script src="/static/js/backToTop.js"></script>
   </body>
