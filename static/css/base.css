@@ -52,15 +52,6 @@ a::after {
 a:hover::after {
   height: 30%;
 }
-span {
-  display: inline-block;
-  margin-right: 20px; /* 调整间距以避免图标重叠 */
-}
-/* 去掉最后一个 span 的 margin-right */
-span:last-child {
-  margin-right: 0;
-}
-
 
 .center {
   text-align: center;
