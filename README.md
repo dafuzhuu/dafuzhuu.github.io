@@ -11,7 +11,6 @@
       ├── html
       ├── img
       ├── js
-          └── backToTop.js
       └── pdf
 ```
 
