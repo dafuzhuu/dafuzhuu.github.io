@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/base.css">
+    
+    <!-- 标题 -->
+    <title>大四选课计划</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="stylesheet" href="/static/css/security.css">
+    
+    <!-- Mathjax -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!--  响应式设计 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <!-- 输入密码界面 -->
+    <div class="login-form" id="login-form">
+      <h2>Enter Password to Access Blog</h2>
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="checkPassword()">Submit</button>
+      <p id="error-message" style="color: red;"></p>
+    </div>
+    
+    <!-- 加密内容 -->
+    <div class="protected-content" id="protected-content">
+      <p>加密内容</p>
+    </div>
+    
+    <!-- 无加密内容 -->
+    <ul>
+      <li><a href="/static/pdf/厦大/2022级信息与计算科学专业培养方案.pdf">信息与计算科学专业培养方案</a></li>
+      <li><a href="/static/pdf/厦大/2022级数学与应用数学专业培养方案 (2).pdf">数学与应用数学专业培养方案</a></li>
+      <li><a href="/static/pdf/厦大/2022级统计学专业培养方案 (7).pdf">统计学专业培养方案</a></li>
+      <li><a href="/static/pdf/厦大/经济学院、 王亚南经济研究院2021级培养方案.pdf">经济学院、 王亚南经济研究院2021级培养方案</a></li>
+    </ul>
+
+    <h2>选课清单</h2>
+    <table>
+      <tr>
+        <th>课程</th>
+        <th>院系</th>
+        <th>开课学期</th>
+        <th>好感度</th>
+      </tr>
+      <tr>
+        <td>拓扑学</td>
+        <td>数院（数学与应用数学）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9734;&#9734;&#9734;</td>
+      </tr>
+      <tr>
+        <td>数值代数</td>
+        <td>数院（数学与应用数学）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+      </tr>
+      <tr>
+        <td>实变函数</td>
+        <td>经院（统计）</td>
+        <td>2</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+      </tr>
+      <tr>
+        <td>随机过程</td>
+        <td>经院（统计）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+      </tr>
+      <tr>
+        <td>多元统计分析</td>
+        <td>经院（统计）</td>
+        <td>2</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+      </tr>
+      <tr>
+        <td>回归分析</td>
+        <td>经院（大数据）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+      </tr>
+      <tr>
+        <td>应用线性模型</td>
+        <td>数院（统计）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+      </tr>
+      <tr>
+        <td>随机分析</td>
+        <td>数院（研究生）</td>
+        <td>1</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+      </tr>
+      <tr>
+        <td>非参数统计</td>
+        <td>经院</td>
+        <td>？</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+      </tr>
+      <tr>
+        <td>贝叶斯统计</td>
+        <td>经院</td>
+        <td>2</td>
+        <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
+      </tr>
+      <tr>
+        <td>统计计算</td>
+        <td>经院</td>
+        <td>2</td>
+        <td>&#9733;&#9733;&#9733;&#9734;&#9734;</td>
+      </tr>
+    </table>
+
+
+    
+    <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
+    <script src="/static/js/backToTop.js"></script>
+  </body>
+</html>
