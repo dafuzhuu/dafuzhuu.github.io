@@ -168,3 +168,35 @@ pre {
     border: 1px solid #ebccd1;
     color: #a94442;
 }
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+th, td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #e0e0e0;
+    color: #333333;
+    font-weight: bold;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
