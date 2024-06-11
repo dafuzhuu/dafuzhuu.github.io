@@ -177,8 +177,7 @@ table {
     text-align: left;
     border: 1px solid #ddd;
     border-radius: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 th, td {
     padding: 10px 15px;
@@ -208,4 +207,5 @@ table tr:first-child th:last-child {
     justify-content: center;
     align-items: center;
     width: 100%;
+    overflow-x: auto;
 }
