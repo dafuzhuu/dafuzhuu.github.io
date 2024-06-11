@@ -183,6 +183,7 @@ th, td {
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
     text-align: center;
+    white-space: nowrap; /* 防止文字换行 */
 }
 th {
     background-color: #e0e0e0;
