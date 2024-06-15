@@ -211,6 +211,9 @@ table tr:first-child th:last-child {
     overflow-x: auto;
 }
 
-.icon {
-    font-size: 25px;
+.scrollable-iframe {
+  width: 600px;
+  height: 400px;
+  border: none;
+  overflow: auto; /* 允许滚动 */
 }
