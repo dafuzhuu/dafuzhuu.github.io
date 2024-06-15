@@ -210,36 +210,3 @@ table tr:first-child th:last-child {
     width: 100%;
     overflow-x: auto;
 }
-
-.dropdown-container {
-  width: 80%; /* 根据需要调整宽度 */
-  max-width: 800px;
-  margin: 20px; /* 添加一些外边距 */
-}
-.scrollable-iframe {
-  width: 600px;
-  height: 400px; /* 根据需要调整高度 */
-  border: none; /* 去除iframe自身的边框 */
-  overflow: auto; /* 允许滚动 */
-}
-details {
-  width: 100%;
-  background-color: #fff; /* 白色背景 */
-  border: 1px solid #ccc; /* 灰色边框 */
-  border-radius: 5px; /* 圆角 */
-  padding: 10px; /* 内边距 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
-}
-summary {
-  font-size: 1.2em;
-  cursor: pointer;
-  padding: 10px;
-  background-color: #e0e0e0; /* 浅灰色背景 */
-  border: 1px solid #bbb; /* 较浅灰色边框 */
-  border-radius: 5px;
-  margin-bottom: 10px;
-  list-style: none; /* 去掉默认的列表样式 */
-}
-summary:hover {
-  background-color: #d0d0d0; /* 悬停时稍微变深的灰色 */
-}
