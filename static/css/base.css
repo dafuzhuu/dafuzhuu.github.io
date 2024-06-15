@@ -217,7 +217,7 @@ table tr:first-child th:last-child {
   margin: 20px; /* 添加一些外边距 */
 }
 .scrollable-iframe {
-  width: 100%;
+  width: 600px;
   height: 400px; /* 根据需要调整高度 */
   border: none; /* 去除iframe自身的边框 */
   overflow: auto; /* 允许滚动 */
