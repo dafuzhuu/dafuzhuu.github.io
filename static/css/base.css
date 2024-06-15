@@ -210,3 +210,7 @@ table tr:first-child th:last-child {
     width: 100%;
     overflow-x: auto;
 }
+
+.icon {
+    font-size: 25px;
+}
