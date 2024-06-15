@@ -28,8 +28,8 @@
     </ul>
 
     <h2>选课清单</h2>
-    <div class="table-container">
-      <table id="autoNumberTable">
+    <div>
+      <table>
         <tr>
           <th>序号</th>
           <th>课程</th>
@@ -38,56 +38,56 @@
           <th>重要性</th>
         </tr>
         <tr>
-          <td></td>
+          <td>1</td>
           <td>随机分析</td>
           <td>数院（研究生）</td>
           <td>1</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>2</td>
           <td>随机过程</td>
           <td>经院（统计）</td>
           <td>1</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>3</td>
           <td><a href="/static/pdf/厦大/回归分析syllabus_王淳林.pdf">回归分析</a></td>
           <td>经院（大数据）</td>
           <td>1</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>4</td>
           <td><a href="/static/pdf/厦大/Lecture0_NonParam_CourseInfo_2021F.pdf">非参数统计</a></td>
           <td>经院</td>
           <td>1</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>5</td>
           <td>多元统计分析</td>
           <td>经院（统计）</td>
           <td>2</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>6</td>
           <td>贝叶斯统计</td>
           <td>经院</td>
           <td>2</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>7</td>
           <td><a href="/static/pdf/厦大/统计计算introduction.pdf">统计计算</a></td>
           <td>经院</td>
           <td>2</td>
           <td>&#9733;&#9733;&#9733;&#9733;&#9734;</td>
         </tr>
         <tr>
-          <td></td>
+          <td>8</td>
           <td>偏微分方程</td>
           <td>数院</td>
           <td>2</td>
@@ -95,33 +95,6 @@
         </tr>
       </table>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var table = document.getElementById("autoNumberTable");
-            var thead = table.querySelector("thead");
-            var headers = thead.getElementsByTagName("th");
-            var index = -1;
-
-            // 找到“序号”列的索引
-            for (var i = 0; i < headers.length; i++) {
-                if (headers[i].innerText === "序号") {
-                    index = i;
-                    break;
-                }
-            }
-
-            // 如果找到“序号”列，自动填充序号
-            if (index !== -1) {
-                var tbody = table.querySelector("tbody");
-                var rows = tbody.getElementsByTagName("tr");
-
-                for (var i = 0; i < rows.length; i++) {
-                    rows[i].getElementsByTagName("td")[index].innerText = i + 1;
-                }
-            }
-        });
-    </script>
     
     <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
     <script src="/static/js/backToTop.js"></script>
