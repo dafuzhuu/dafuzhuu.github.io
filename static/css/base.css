@@ -213,7 +213,7 @@ table tr:first-child th:last-child {
 
 .iframe-container {
     width: 600px;
-    height: 400px;
+    height: 300px;
     overflow: auto; /* 允许滚动条 */
     border: none; /* 移除边框 */
 }
