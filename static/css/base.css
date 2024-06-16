@@ -180,7 +180,7 @@ table {
     overflow: hidden;
 }
 th, td {
-    padding: 10px 15px;
+    padding: 5px 5px;
     border-bottom: 1px solid #ddd;
     text-align: center;
     white-space: nowrap; /* 防止文字换行 */
