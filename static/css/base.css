@@ -15,7 +15,7 @@ body {
 body::after {
     content: "";
     display: block;
-    height: 50px; /* 留出50px的底部空间 */
+    height: 80px; /* 留出80px的底部空间 */
 }
 
 @media only screen and (max-width: 600px) {
