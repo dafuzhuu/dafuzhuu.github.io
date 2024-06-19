@@ -12,6 +12,12 @@ body {
   line-height: 2; <!-- 行间距 -->
 }
 
+body::after {
+    content: "";
+    display: block;
+    height: 50px; /* 留出50px的底部空间 */
+}
+
 @media only screen and (max-width: 600px) {
   body {
     margin-left: 5%; /* 在小屏幕设备上将 margin-left 设置为 0 */
