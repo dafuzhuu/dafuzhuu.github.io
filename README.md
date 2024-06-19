@@ -57,7 +57,12 @@
     
     
     <!-- 无加密内容 -->
-    
+    <h2>Title</h2>
+    <div class="date-info">
+        <p>Published on: <span id="publish-date">2024-06-20</span></p>
+        <p>Last updated on: <span id="update-date">2024-06-20</span></p>
+    </div>
+
    
     
     <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
