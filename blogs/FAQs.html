@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/base.css">
+    
+    <!-- 标题 -->
+    <title>Collection of errors and solutions</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <link rel="stylesheet" href="/static/css/security.css">
+    
+    <!-- Mathjax -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!--  响应式设计 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <h2>Collection of errors and solutions</h2>
+    <div class="date-info">
+        <p>Published on: <span id="publish-date">2024-07-05</span></p>
+        <p>Last updated on: <span id="update-date">2024-07-05</span></p>
+    </div>
+    <h3>How can I activate a Conda environment from PowerShell?</h3>
+    <ol>
+      <li>navigate to "C:\Users\<username>\anaconda3\condabin"</li>
+      <li>Run <code>./conda init powershell</code> in that folder, and reopen the PowerShell.</li>
+      <li>Please note: If you encountered <code>ps1 cannot be loaded because running scripts is disabled on this system</code>, simply run <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code></li>
+      <li>All set!</li>
+    </ol>
+   
+    
+    <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
+    <script src="/static/js/backToTop.js"></script>
+  </body>
+</html>
