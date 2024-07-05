@@ -225,7 +225,7 @@ table tr:first-child th:last-child {
 code {
     background-color: #f4f4f4;
     padding: 2px 4px;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace, "HanSerifSC";
     /*     color: #c7254e; */
     color: #8A2BE2;
     border-radius: 4px;
