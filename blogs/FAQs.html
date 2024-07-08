@@ -28,6 +28,13 @@
       <li>Please note: If you encountered <code>ps1 cannot be loaded because running scripts is disabled on this system</code>, simply run <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code></li>
       <li>All set!</li>
     </ol>
+    <h3>It is recommended to use source Tensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True)</h3>
+    <p>
+      torch中如果有一个输入inputs，对它操作<code>inputs = torch.tensor(inputs)</code>就会出现这个警告。
+    </p>
+    <p>
+      正确做法是：<code>inputs = inputs.clone().detach()</code>
+    </p>
    
     
     <button class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
