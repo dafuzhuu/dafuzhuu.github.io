@@ -7,7 +7,7 @@
   ├── index.html
   └── static
       ├── css
-          └── base.css
+      │   └── base.css
       ├── html
       ├── img
       ├── js
