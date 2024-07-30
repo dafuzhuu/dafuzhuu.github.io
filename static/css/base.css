@@ -4,10 +4,10 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 18px;
   font-family: "HanSerifSC", serif;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 24%;
+  margin-right: 24%;
   margin-top: 80px;
   line-height: 2; <!-- 行间距 -->
 }
