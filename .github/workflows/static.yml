@@ -31,13 +31,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      
+      # Step to convert Markdown to HTML using pandoc
+      - name: Convert Markdown to HTML
+        run: |
+          mkdir -p output
+          for file in *.md; do
+            pandoc "$file" -o "output/${file%.md}.html"
+          done
+      
+      # Replace the Upload artifact step to upload only the converted HTML files
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload only the converted HTML files
+          path: './output'
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
