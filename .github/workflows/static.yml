@@ -31,7 +31,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
+      # Step to install Pandoc (if needed)
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
       # Step to convert Markdown to HTML using pandoc
       - name: Convert Markdown to HTML
         run: |
